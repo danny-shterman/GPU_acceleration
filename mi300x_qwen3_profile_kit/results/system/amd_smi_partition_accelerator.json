@@ -1,0 +1,27 @@
+# timestamp=2026-10-05T10:21:51,403428390+00:00
+# command=amd-smi partition --accelerator --json
+{
+    "partition_profiles": [
+        {
+            "gpu_id": 0,
+            "profile_index": "N/A",
+            "memory_partition_caps": "N/A",
+            "accelerator_type": "N/A",
+            "partition_id": "0",
+            "num_partitions": "N/A",
+            "num_resources": "N/A",
+            "resource_index": "N/A",
+            "resource_type": "N/A",
+            "resource_instances": "N/A",
+            "resources_shared": "N/A"
+        }
+    ],
+    "partition_resources": [
+        {
+            "resource_index": "N/A",
+            "resource_type": "N/A",
+            "resource_instances": "N/A",
+            "resources_shared": "N/A"
+        }
+    ]
+}

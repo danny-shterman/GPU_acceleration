@@ -1,0 +1,61 @@
+# timestamp=2026-10-05T10:21:52,100539703+00:00
+# command=amd-smi firmware --json
+[
+    {
+        "gpu": 0,
+        "fw_list": [
+            {
+                "fw_id": "CP_MEC1",
+                "fw_version": "32960"
+            },
+            {
+                "fw_id": "CP_MEC2",
+                "fw_version": "32960"
+            },
+            {
+                "fw_id": "RLC",
+                "fw_version": "69"
+            },
+            {
+                "fw_id": "SDMA0",
+                "fw_version": "25"
+            },
+            {
+                "fw_id": "SDMA1",
+                "fw_version": "25"
+            },
+            {
+                "fw_id": "VCN",
+                "fw_version": "09.11.80.1A"
+            },
+            {
+                "fw_id": "RLC_RESTORE_LIST_GPM_MEM",
+                "fw_version": "4"
+            },
+            {
+                "fw_id": "RLC_RESTORE_LIST_SRM_MEM",
+                "fw_version": "4"
+            },
+            {
+                "fw_id": "RLC_RESTORE_LIST_CNTL",
+                "fw_version": "4"
+            },
+            {
+                "fw_id": "TA_RAS",
+                "fw_version": "1B.36.02.1A"
+            },
+            {
+                "fw_id": "TA_XGMI",
+                "fw_version": "20.00.00.14"
+            },
+            {
+                "fw_id": "PM",
+                "fw_version": "00.85.130.02"
+            },
+            {
+                "fw_id": "PLDM_BUNDLE",
+                "fw_version": "01.25.06.10"
+            }
+        ]
+    }
+]

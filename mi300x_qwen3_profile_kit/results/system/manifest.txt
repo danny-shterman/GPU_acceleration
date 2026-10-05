@@ -1,0 +1,8 @@
+timestamp=2026-10-05T10:21:52,829534938+00:00
+hostname=enc1-gpuvm004
+kernel=6.8.0-124-generic
+rocminfo=/usr/bin/rocminfo
+amd_smi=/usr/bin/amd-smi
+rocprofv3=/usr/bin/rocprofv3
+rocprof_compute=/usr/bin/rocprof-compute
+hipcc=/usr/bin/hipcc

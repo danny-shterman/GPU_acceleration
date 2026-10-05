@@ -1,0 +1,12 @@
+# timestamp=2026-10-05T10:21:49,940776833+00:00
+# command=amd-smi list --json
+[
+    {
+        "gpu": 0,
+        "bdf": "0000:ff:00.0",
+        "uuid": "85ff74b5-0000-1000-808a-4298ff49744c",
+        "kfd_id": 46235,
+        "node_id": 1,
+        "partition_id": 0
+    }
+]

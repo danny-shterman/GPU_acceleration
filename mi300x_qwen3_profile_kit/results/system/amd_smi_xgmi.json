@@ -1,0 +1,56 @@
+# timestamp=2026-10-05T10:21:51,724080120+00:00
+# command=amd-smi xgmi --json
+{
+    "xgmi_metric": [
+        [
+            {
+                "gpu": 0,
+                "bdf": "0000:ff:00.0",
+                "link_metrics": {
+                    "bit_rate": {
+                        "value": 32,
+                        "unit": "Gb/s"
+                    },
+                    "max_bandwidth": {
+                        "value": 512,
+                        "unit": "Gb/s"
+                    },
+                    "link_type": "N/A",
+                    "links": [
+                        {
+                            "gpu": 0,
+                            "bdf": "0000:ff:00.0",
+                            "read": "N/A",
+                            "write": "N/A"
+                        }
+                    ]
+                }
+            }
+        ]
+    ],
+    "link_port_status": [
+        {
+            "gpu": 0,
+            "bdf": "0000:ff:00.0",
+            "link_status": [
+                "D",
+                "D",
+                "D",
+                "D",
+                "D",
+                "D",
+                "D",
+                "D"
+            ]
+        }
+    ],
+    "link_status": [
+        {
+            "gpu": 0,
+            "bdf": "0000:ff:00.0",
+            "link_status": [
+                "SELF"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+# timestamp=2026-10-05T10:21:51,186800874+00:00
+# command=amd-smi partition --memory --json
+{
+    "memory_partition": [
+        {
+            "gpu_id": 0,
+            "memory_partition_caps": "N/A",
+            "current_memory_partition": "NPS1"
+        }
+    ]
+}

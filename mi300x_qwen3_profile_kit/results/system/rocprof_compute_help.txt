@@ -1,0 +1,26 @@
+# timestamp=2026-10-05T10:21:52,509769984+00:00
+# command=rocprof-compute profile --help
+No module named 'pandas'
+[ERROR] The 'astunparse==1.6.2' package was not found in the current execution environment.
+[ERROR] The 'colorlover' package was not found in the current execution environment.
+[ERROR] The 'dash-bootstrap-components' package was not found in the current execution environment.
+[ERROR] The 'dash-svg' package was not found in the current execution environment.
+[ERROR] The 'dash>=3.0.0' package was not found in the current execution environment.
+[ERROR] The 'kaleido==0.2.1' package was not found in the current execution environment.
+[ERROR] The 'matplotlib' package was not found in the current execution environment.
+[ERROR] The 'numpy>=1.17.5' package was not found in the current execution environment.
+[ERROR] The 'pandas>=1.4.3' package was not found in the current execution environment.
+[ERROR] The 'plotext' package was not found in the current execution environment.
+[ERROR] The 'plotille' package was not found in the current execution environment.
+[ERROR] The 'pymongo' package was not found in the current execution environment.
+[ERROR] The 'sqlalchemy>=2.0.42' package was not found in the current execution environment.
+[ERROR] The 'tabulate' package was not found in the current execution environment.
+[ERROR] The 'textual' package was not found in the current execution environment.
+[ERROR] The 'textual_plotext' package was not found in the current execution environment.
+[ERROR] The 'textual-fspicker>=0.4.3' package was not found in the current execution environment.
+[ERROR] The 'tqdm' package was not found in the current execution environment.
+
+Please verify all of the python dependencies called out in the requirements file
+are installed locally prior to running rocprofiler-compute.
+
+See: /opt/rocm-7.2.4/libexec/rocprofiler-compute/requirements.txt

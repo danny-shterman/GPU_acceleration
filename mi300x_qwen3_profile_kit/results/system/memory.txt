@@ -1,0 +1,5 @@
+# timestamp=2026-10-05T10:21:49,220308596+00:00
+# command=free -h
+               total        used        free      shared  buff/cache   available
+Mem:           220Gi       5.7Gi       106Gi       9.4Mi       110Gi       214Gi
+Swap:          4.0Gi          0B       4.0Gi

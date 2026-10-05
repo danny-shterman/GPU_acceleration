@@ -1,0 +1,9 @@
+# timestamp=2026-10-05T10:21:49,214490236+00:00
+# command=numactl --hardware
+available: 1 nodes (0)
+node 0 cpus: 0 1 2 3 4 5 6 7
+node 0 size: 225486 MB
+node 0 free: 108944 MB
+node distances:
+node   0 
+  0:  10 
