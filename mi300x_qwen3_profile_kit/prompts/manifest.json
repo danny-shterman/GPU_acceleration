@@ -1,0 +1,37 @@
+{
+  "short": {
+    "tokens": 128,
+    "count": 16,
+    "output_tokens": 1,
+    "verified_input_tokens": 128,
+    "file": "prompts/short.jsonl"
+  },
+  "medium": {
+    "tokens": 2048,
+    "count": 16,
+    "output_tokens": 1,
+    "verified_input_tokens": 2048,
+    "file": "prompts/medium.jsonl"
+  },
+  "long": {
+    "tokens": 16384,
+    "count": 16,
+    "output_tokens": 1,
+    "verified_input_tokens": 16384,
+    "file": "prompts/long.jsonl"
+  },
+  "large_batch": {
+    "tokens": 2048,
+    "count": 64,
+    "output_tokens": 1,
+    "verified_input_tokens": 2048,
+    "file": "prompts/large_batch.jsonl"
+  },
+  "decode": {
+    "tokens": 256,
+    "count": 32,
+    "output_tokens": 512,
+    "verified_input_tokens": 256,
+    "file": "prompts/decode.jsonl"
+  }
+}

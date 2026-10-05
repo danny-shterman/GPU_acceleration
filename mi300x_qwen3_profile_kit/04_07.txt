@@ -1,0 +1,5 @@
+docker exec mi300x-qwen3-profile   python3 -c 'import transformers; print(transformers.__version__)'
+docker exec mi300x-qwen3-profile   ls -l /workspace/kit/07_generate_prompts.py
+docker exec mi300x-qwen3-profile   bash -lc 'cd /workspace/kit && python3 ./07_generate_prompts.py'
+ls -ltr prompts/
+bash 04_bench_prefill.sh
