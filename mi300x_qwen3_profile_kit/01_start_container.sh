@@ -32,7 +32,7 @@ docker run -d \
     --ipc=host \
     -p "${PORT}:${PORT}" \
     -v "$HF_CACHE:/root/.cache/huggingface" \
-    -v "$KIT_DIR:/workspace/kit" \
+    -v "$KIT_DIR:/home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit" \
     --entrypoint /bin/bash \
     "$VLLM_IMAGE" \
     -lc 'sleep infinity'

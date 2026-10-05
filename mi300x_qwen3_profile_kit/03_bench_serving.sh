@@ -14,8 +14,55 @@ STAMP="$(date +%Y%m%d_%H%M%S)"
 RESULT="serving_${STAMP}.json"
 
 docker exec "$CONTAINER_NAME" bash -lc "
-  cd /workspace/kit
+  cd /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit
+  echo "Checking vLLM server..."
+
+  if ! docker exec "$CONTAINER_NAME" \
+      curl -fsS "http://127.0.0.1:${PORT}/v1/models" >/dev/null
+  then
+      echo "ERROR: vLLM server is not reachable on port ${PORT}."
+      echo
+      echo "Server process:"
+      docker exec "$CONTAINER_NAME" \
+          bash -lc 'ps aux | grep -E "[v]llm|[a]pi_server" || true'
+  
+      echo
+      echo "Listening sockets:"
+      docker exec "$CONTAINER_NAME" \
+          bash -lc "ss -lntp | grep ':${PORT}' || true"
+  
+      echo
+      echo "Last 100 server-log lines:"
+      docker exec "$CONTAINER_NAME" \
+          tail -100 /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results/vllm_server.log || true
+  
+      exit 1
+  fi
+  
+  echo "vLLM server is ready."
+
+  echo "Checking vLLM health..."
+
+  if ! docker exec "$CONTAINER_NAME" \
+      curl -fsS "http://127.0.0.1:${PORT}/health" >/dev/null
+  then
+      echo "ERROR: vLLM is not healthy on port ${PORT}."
+      echo "Check whether the server is still initializing or has failed."
+      exit 1
+  fi
+  
+  echo "vLLM health check passed."
+  
+  echo "Checking model endpoint..."
+  
+  docker exec "$CONTAINER_NAME" \
+      curl -fsS "http://127.0.0.1:${PORT}/v1/models"
+  
+  echo
+
   vllm bench serve \
+    --ready-check-timeout-sec 600 \
+    --temperature 0 \\
     --backend openai \
     --base-url 'http://127.0.0.1:${PORT}' \
     --model '$MODEL_ID' \
@@ -32,7 +79,7 @@ docker exec "$CONTAINER_NAME" bash -lc "
     --metric-percentiles 50,90,95,99 \
     --save-result \
     --save-detailed \
-    --result-dir /workspace/kit/results \
+    --result-dir /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results \
     --result-filename '$RESULT'
 "
 

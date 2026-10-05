@@ -7,18 +7,21 @@ PORT="${PORT:-8000}"
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-32768}"
 GPU_MEMORY_UTILIZATION="${GPU_MEMORY_UTILIZATION:-0.90}"
 
+echo "KUKU100"
+
 docker exec "$CONTAINER_NAME" bash -lc \
     "pkill -f 'vllm serve' >/dev/null 2>&1 || true"
+echo "KUKU200"
 
 docker exec -d "$CONTAINER_NAME" bash -lc "
-    cd /workspace/kit
+    cd /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit
     exec vllm serve '$MODEL_ID' \
       --host 0.0.0.0 \
       --port '$PORT' \
       --dtype bfloat16 \
       --max-model-len '$MAX_MODEL_LEN' \
       --gpu-memory-utilization '$GPU_MEMORY_UTILIZATION' \
-      > results/vllm_server.log 2>&1
+      2>&1 | tee /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results/vllm_server.log/vllm_server.log
 "
 
 echo "Starting Qwen3-32B..."
@@ -33,5 +36,5 @@ for i in $(seq 1 180); do
 done
 
 echo "ERROR: server did not become ready."
-docker exec "$CONTAINER_NAME" tail -100 /workspace/kit/results/vllm_server.log || true
+docker exec "$CONTAINER_NAME" tail -100 /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results/vllm_server.log || true
 exit 1
