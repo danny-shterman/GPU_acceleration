@@ -1,40 +1,53 @@
-#!/usr/bin/env bash
-set -euo pipefail
+echo
+echo "Waiting for server readiness..."
 
-MODEL_ID="${MODEL_ID:-Qwen/Qwen3-32B}"
-CONTAINER_NAME="${CONTAINER_NAME:-mi300x-qwen3-profile}"
-PORT="${PORT:-8000}"
-MAX_MODEL_LEN="${MAX_MODEL_LEN:-32768}"
-GPU_MEMORY_UTILIZATION="${GPU_MEMORY_UTILIZATION:-0.90}"
+MAX_ATTEMPTS=300
 
-echo "KUKU100"
+for ((attempt=1; attempt<=MAX_ATTEMPTS; attempt++)); do
 
-docker exec "$CONTAINER_NAME" bash -lc \
-    "pkill -f 'vllm serve' >/dev/null 2>&1 || true"
-echo "KUKU200"
+    HTTP_CODE="$(
+        docker exec "$CONTAINER_NAME" \
+            curl -s -o /dev/null -w '%{http_code}' \
+            "http://127.0.0.1:${PORT}/health" \
+            2>/dev/null || true
+    )"
 
-docker exec -d "$CONTAINER_NAME" bash -lc "
-    cd /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit
-    exec vllm serve '$MODEL_ID' \
-      --host 0.0.0.0 \
-      --port '$PORT' \
-      --dtype bfloat16 \
-      --max-model-len '$MAX_MODEL_LEN' \
-      --gpu-memory-utilization '$GPU_MEMORY_UTILIZATION' \
-      2>&1 | tee /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results/vllm_server.log/vllm_server.log
-"
+    if [[ "$HTTP_CODE" == "200" ]]; then
+        echo
+        echo "vLLM server is READY."
+        echo
 
-echo "Starting Qwen3-32B..."
-echo "Server log: results/vllm_server.log"
+        echo "Health:"
+        docker exec "$CONTAINER_NAME" \
+            curl -sS "http://127.0.0.1:${PORT}/health"
 
-for i in $(seq 1 180); do
-    if curl -fsS "http://127.0.0.1:${PORT}/v1/models" >/dev/null 2>&1; then
-        echo "Server ready."
+        echo
+        echo "Models:"
+        docker exec "$CONTAINER_NAME" \
+            curl -sS "http://127.0.0.1:${PORT}/v1/models"
+
+        echo
+        echo
+        echo "Server URL:"
+        echo "  http://127.0.0.1:${PORT}"
+        echo
+
         exit 0
     fi
+
+    if (( attempt % 5 == 0 )); then
+        echo "Still waiting... attempt ${attempt}/${MAX_ATTEMPTS}, HTTP=${HTTP_CODE:-none}"
+    fi
+
     sleep 2
 done
 
-echo "ERROR: server did not become ready."
-docker exec "$CONTAINER_NAME" tail -100 /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results/vllm_server.log || true
+echo
+echo "ERROR: vLLM did not become ready."
+echo
+echo "Last 100 lines of server log:"
+
+docker exec "$CONTAINER_NAME" \
+    bash -lc 'tail -n 100 /workspace/kit/results/vllm_server.log'
+
 exit 1

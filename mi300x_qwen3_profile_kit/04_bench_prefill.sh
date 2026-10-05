@@ -18,7 +18,7 @@ run_case() {
     stamp="$(date +%Y%m%d_%H%M%S)"
 
     docker exec "$CONTAINER_NAME" bash -lc "
-      cd /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit
+      cd /workspace/kit
 
       echo "Checking vLLM server..."
 
@@ -39,7 +39,7 @@ run_case() {
           echo
           echo "Last 100 server-log lines:"
           docker exec "$CONTAINER_NAME" \
-              tail -100 /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results/vllm_server.log || true
+              tail -100 /workspace/kit/results/vllm_server.log || true
       
           exit 1
       fi
@@ -72,7 +72,7 @@ run_case() {
         --base-url 'http://127.0.0.1:${PORT}' \
         --model '$MODEL_ID' \
         --dataset-name custom \
-        --dataset-path '/home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/prompts/${name}.jsonl' \
+        --dataset-path '/workspace/kit/prompts/${name}.jsonl' \
         --skip-chat-template \
         --custom-output-len 1 \
         --num-prompts '$prompts' \
@@ -84,7 +84,7 @@ run_case() {
         --metric-percentiles 50,90,95,99 \
         --save-result \
         --save-detailed \
-        --result-dir /home/hotaisle/users/danny/gpu_accelerate/mi300x_qwen3_profile_kit/results \
+        --result-dir /workspace/kit/results \
         --result-filename 'prefill_${name}_${stamp}.json'
     "
 }
