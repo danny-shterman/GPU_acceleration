@@ -12,15 +12,18 @@ source .env
 
 Then verify:
 
-```docker ps -a --filter name=mi300x-qwen3-profile```
+```docker ps -a --filter name=mi300x-qwen3-profile
+```
 
 Now:
 
-```docker exec -it mi300x-qwen3-profile bash```
+```docker exec -it mi300x-qwen3-profile bash
+```
 
 Once inside, verify that the MI300X is visible:
 
-```rocminfo | grep -E 'Name:|Marketing Name:'```
+```rocminfo | grep -E 'Name:|Marketing Name:'
+```
 
 and:
 
@@ -36,8 +39,10 @@ for i in range(torch.cuda.device_count()):
     p = torch.cuda.get_device_properties(i)
     print(f"GPU {i}: {p.name}")
     print(f"  memory = {p.total_memory / 1024**3:.2f} GiB")
-```PY
+PY
+```
 
 Exit the interactive shell:
 
 ```exit
+```
