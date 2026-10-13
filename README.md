@@ -46,3 +46,23 @@ Exit the interactive shell:
 ```
 exit
 ```
+
+From mi300x_qwen3_profile_kit:
+```
+source .env
+./02_serve_qwen3_32b.sh
+```
+
+Check:
+```
+docker ps
+```
+and:
+```
+curl http://localhost:8000/v1/models
+```
+Then inspect the server log:
+```
+docker exec mi300x-qwen3-profile \
+    tail -100 /workspace/kit/results/vllm_server.log
+```
