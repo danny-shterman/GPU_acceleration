@@ -11,8 +11,8 @@ source .env
 ```
 
 Then verify:
-
-```docker ps -a --filter name=mi300x-qwen3-profile
+```
+docker ps -a --filter name=mi300x-qwen3-profile
 ```
 
 Now:
