@@ -16,18 +16,18 @@ docker ps -a --filter name=mi300x-qwen3-profile
 ```
 
 Now:
-
-```docker exec -it mi300x-qwen3-profile bash
+```
+docker exec -it mi300x-qwen3-profile bash
 ```
 
 Once inside, verify that the MI300X is visible:
-
-```rocminfo | grep -E 'Name:|Marketing Name:'
+```
+rocminfo | grep -E 'Name:|Marketing Name:'
 ```
 
 and:
-
-``` python3 - <<'PY'
+```
+python3 - <<'PY'
 import torch
 
 print("PyTorch:", torch.__version__)
@@ -43,6 +43,6 @@ PY
 ```
 
 Exit the interactive shell:
-
-```exit
+```
+exit
 ```
