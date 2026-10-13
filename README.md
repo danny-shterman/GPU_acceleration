@@ -7,7 +7,8 @@ cd mi300x_qwen3_profile_kit
 cp .env.example .env
 source .env
 
-```./01_start_container.sh
+./01_start_container.sh
+```
 
 Then verify:
 
