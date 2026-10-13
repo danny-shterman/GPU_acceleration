@@ -19,7 +19,7 @@ docker exec -it mi300x-qwen3-profile bash
 
 Once inside, verify that the MI300X is visible:
 
-rocminfo | grep -E 'Name:|Marketing Name:'
+```rocminfo | grep -E 'Name:|Marketing Name:'
 
 and:
 
@@ -37,3 +37,6 @@ for i in range(torch.cuda.device_count()):
     print(f"  memory = {p.total_memory / 1024**3:.2f} GiB")
 ```PY
 
+Exit the interactive shell:
+
+```exit
