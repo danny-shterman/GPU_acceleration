@@ -23,15 +23,17 @@ rocminfo | grep -E 'Name:|Marketing Name:'
 
 and:
 
-python3 - <<'PY'
+``` python3 - <<'PY'
 import torch
+
 print("PyTorch:", torch.__version__)
 print("HIP:", torch.version.hip)
 print("GPU available:", torch.cuda.is_available())
 print("GPU count:", torch.cuda.device_count())
+
 for i in range(torch.cuda.device_count()):
     p = torch.cuda.get_device_properties(i)
     print(f"GPU {i}: {p.name}")
-    print(f" memory = {p.total_memory / 1024**3:.2f} GiB")
-PY
+    print(f"  memory = {p.total_memory / 1024**3:.2f} GiB")
+```PY
 
