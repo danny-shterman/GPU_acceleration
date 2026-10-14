@@ -14,6 +14,10 @@ Then verify:
 ```
 docker ps -a --filter name=mi300x-qwen3-profile
 ```
+Exit docker if it works OK:
+```
+exit
+```
 
 Now:
 ```
