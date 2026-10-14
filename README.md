@@ -2,9 +2,10 @@
 
 First collect the machine state:
 ```
-unzipmi300x_qwen3_profile_kit.zip
-cdmi300x_qwen3_profile_kit
-bash00_collect_system.sh
+unzip mi300x_qwen3_profile_kit.zip
+cd mi300x_qwen3_profile_kit
+
+bash 00_collect_system.sh
 ```
 You should now have:
 ```
