@@ -46,7 +46,7 @@ for i in range(torch.cuda.device_count()):
 PY
 ```
 
-Exit the interactive shell:
+Exit the docker shell:
 ```
 exit
 ```
