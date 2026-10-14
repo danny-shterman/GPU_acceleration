@@ -103,5 +103,11 @@ From mi300x_qwen3_profile_kit in another terminal:
 ```
 ./03_bench_serving.sh
 ```
+Now run:
+```
+bash 04_bench_prefill.sh
+```
+
+
 
 
