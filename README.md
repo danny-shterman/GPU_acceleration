@@ -99,3 +99,9 @@ Then inspect the server log:
 docker exec mi300x-qwen3-profile \
     tail -100 /workspace/kit/results/vllm_server.log
 ```
+From mi300x_qwen3_profile_kit in another terminal:
+```
+./03_bench_serving.sh
+```
+
+
