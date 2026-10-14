@@ -7,26 +7,22 @@ cdmi300x_qwen3_profile_kit
 bash00_collect_system.sh
 ```
 You should now have:
+```
 system_snapshot/
-host.txt
-amd_smi_version.txt
-amd_smi_list.txt
-amd_smi_static_gpu0.txt
-32.8×10×92≈65.6 GB.
-11
-12
-12
-12
-8
-amd_smi_metric_gpu0.txt
-amd_smi_topology.txt
-amd_smi_xgmi.txt
-amd_smi_partition.txt
-rocminfo.txt
-hipconfig.txt
-lspci.txt
-numactl.txt
-...
+    host.txt
+    amd_smi_version.txt
+    amd_smi_list.txt
+    amd_smi_static_gpu0.txt
+    amd_smi_metric_gpu0.txt
+    amd_smi_topology.txt
+    amd_smi_xgmi.txt
+    amd_smi_partition.txt
+    rocminfo.txt
+    hipconfig.txt
+    lspci.txt
+    numactl.txt
+    ...
+```
 
 ```make_mi300x_qwen3_profile_kit.sh creates the complete directory, validates the generated files, generates the full DOT DFG, and produces mi300x_qwen3_profile_kit.zip on your machine.
 
