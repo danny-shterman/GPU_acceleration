@@ -82,13 +82,17 @@ source .env
 ./02_serve_qwen3_32b.sh
 ```
 
-Check:
+Check the existing server from the host:
 ```
 docker ps
 ```
 and:
 ```
 curl http://localhost:8000/v1/models
+```
+or from the container:
+```
+curl http://127.0.0.1:8000/health
 ```
 Then inspect the server log:
 ```
