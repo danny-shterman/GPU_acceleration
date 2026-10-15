@@ -107,6 +107,12 @@ Now run:
 ```
 bash 04_bench_prefill.sh
 ```
+python3 ./07_generate_prompts.py should be run from inside the docker:
+```
+docker exec mi300x-qwen3-profile \
+  bash -lc 'cd /workspace/kit && python3 ./07_generate_prompts.py'
+```
+
 
 
 
