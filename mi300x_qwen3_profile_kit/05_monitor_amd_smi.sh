@@ -21,6 +21,6 @@ amd-smi monitor \
     --csv \
     --file "$OUT" \
     --watch "$INTERVAL" \
-    --watch-time "$DURATION"
+    --watch_time "$DURATION"
 
 echo "Telemetry: $OUT"
