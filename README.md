@@ -136,6 +136,53 @@ To check that vllm serve process under rocprof doesn't run use:
 ```
 docker exec mi300x-qwen3-profile   bash -lc 'ps -ef | grep -E "vllm|VLLM" | grep -v grep || true'
 ```
+To check peak GPU memory use:
+```
+bash 05_monitor_amd_smi.sh
+```
+it executes:
+```
+amd-smi monitor \
+--gpu 0 \
+--gfx \
+Rrequests = .
+Tbenchmark
+Ncompleted requests
+27
+--mem \
+--vram-usage \
+--pcie \
+--watch 0.1 \
+--csv \
+--file amd_smi_monitor.csv
+```
+Take:
+```
+max(VRAM_USAGE)
+```
+over the measured interval.
+
+To check HBM latency use:
+```
+bash 06_build_and_run_hbm_latency.sh
+```
+The build command is:
+```
+hipcc -O3 --offload-arch=gfx942 hbm_latency.hip -o hbm_latency
+```
+Then perform repeated 1-GiB measurements by using:
+```
+for i in $(seq 1 10); do
+    ./hbm_latency $((1024*1024*1024)) 64
+done
+```
+It also could be repeated with different strides:
+```
+./hbm_latency $((1024*1024*1024)) 64
+./hbm_latency $((1024*1024*1024)) 128
+./hbm_latency $((1024*1024*1024)) 256
+```
+
 
 
 
