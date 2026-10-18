@@ -139,11 +139,11 @@ and
    |
    +-- kill vllm serve
 ```
-03_bench_serving.sh generates bench_serving_<timestamp>.json and bench_serving_<timestamp>.log files. 
-04_bench_prefill.sh generates prefill_[short|medium|long|large batch]_<timestamp>.json files.
-05_monitor_amd_smi.sh generates amd_smi_monitor_<timestamp>.csv foe both scripts.
-vllm_server.log is updated all the time.
-03_bench_serving.sh and 04_bench_prefill.sh should not run at the same time but serially.
+03_bench_serving.sh generates bench_serving_<timestamp>.json and bench_serving_<timestamp>.log files. \
+04_bench_prefill.sh generates prefill_[short|medium|long|large batch]_<timestamp>.json files. \
+05_monitor_amd_smi.sh generates amd_smi_monitor_<timestamp>.csv foe both scripts. \
+vllm_server.log is updated all the time. \
+03_bench_serving.sh and 04_bench_prefill.sh should not run at the same time but serially. \
 To kill vllm serve between 03_bench_serving.sh and 04_bench_prefill.sh runs use:
 ```
 docker exec mi300x-qwen3-profile \
