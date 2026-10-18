@@ -84,7 +84,7 @@ Exit the docker shell:
 exit
 ```
 
-From mi300x_qwen3_profile_kit:
+From mi300x_qwen3_profile_kit (02_serve_qwen3_32b.sh runs vllm serve '${MODEL_ID}'):
 ```
 source .env
 ./02_serve_qwen3_32b.sh
@@ -107,11 +107,11 @@ Then inspect the server log (could be done from another terminal):
 docker exec mi300x-qwen3-profile \
     tail -100 /workspace/kit/results/vllm_server.log
 ```
-From mi300x_qwen3_profile_kit in another terminal:
+From mi300x_qwen3_profile_kit in another terminal (03_bench_serving.sh runs vllm bench serve):
 ```
 ./03_bench_serving.sh
 ```
-Now run:
+Now run (04_bench_prefill.sh runs vllm bench serve):
 ```
 bash 04_bench_prefill.sh
 ```
