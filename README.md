@@ -102,7 +102,7 @@ or from the container:
 ```
 curl http://127.0.0.1:8000/health
 ```
-Then inspect the server log:
+Then inspect the server log (could be done from another terminal):
 ```
 docker exec mi300x-qwen3-profile \
     tail -100 /workspace/kit/results/vllm_server.log
