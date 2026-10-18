@@ -1,0 +1,99 @@
+[
+  {
+    "name": "x",
+    "op": "placeholder",
+    "target": "x",
+    "shape": [
+      1,
+      128,
+      5120
+    ],
+    "dtype": "torch.bfloat16",
+    "users": [
+      "gate_proj",
+      "up_proj"
+    ]
+  },
+  {
+    "name": "gate_proj",
+    "op": "call_module",
+    "target": "gate_proj",
+    "shape": [
+      1,
+      128,
+      25600
+    ],
+    "dtype": "torch.bfloat16",
+    "users": [
+      "silu"
+    ]
+  },
+  {
+    "name": "silu",
+    "op": "call_function",
+    "target": "<function silu at 0x7dfebcf2f740>",
+    "shape": [
+      1,
+      128,
+      25600
+    ],
+    "dtype": "torch.bfloat16",
+    "users": [
+      "mul"
+    ]
+  },
+  {
+    "name": "up_proj",
+    "op": "call_module",
+    "target": "up_proj",
+    "shape": [
+      1,
+      128,
+      25600
+    ],
+    "dtype": "torch.bfloat16",
+    "users": [
+      "mul"
+    ]
+  },
+  {
+    "name": "mul",
+    "op": "call_function",
+    "target": "<built-in function mul>",
+    "shape": [
+      1,
+      128,
+      25600
+    ],
+    "dtype": "torch.bfloat16",
+    "users": [
+      "down_proj"
+    ]
+  },
+  {
+    "name": "down_proj",
+    "op": "call_module",
+    "target": "down_proj",
+    "shape": [
+      1,
+      128,
+      5120
+    ],
+    "dtype": "torch.bfloat16",
+    "users": [
+      "output"
+    ]
+  },
+  {
+    "name": "output",
+    "op": "output",
+    "target": "output",
+    "shape": [
+      1,
+      128,
+      5120
+    ],
+    "dtype": "torch.bfloat16",
+    "users": []
+  }
+]

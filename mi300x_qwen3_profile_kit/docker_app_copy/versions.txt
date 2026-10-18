@@ -1,0 +1,21 @@
+BASE_IMAGE: rocm/dev-ubuntu-22.04:7.2.3-complete
+ROCM_SYSTEMS_REPO: https://github.com/ROCm/rocm-systems.git
+ROCPROFILER_SDK_COMMIT: 2b22ab0195cc1461cd9abf3b969e9dd7c10af350
+ROCM_RUNTIME_COMMIT: af70edc91f1dc5d228fd4c076df99e65e49c4521
+TRITON_BRANCH: 669b31a
+TRITON_REPO: https://github.com/ROCm/triton.git
+PYTORCH_BRANCH: 733fca1
+PYTORCH_VISION_BRANCH: v0.28.0
+PYTORCH_REPO: https://github.com/ROCm/pytorch.git
+PYTORCH_VISION_REPO: https://github.com/pytorch/vision.git
+PYTORCH_AUDIO_BRANCH: v2.11.0
+PYTORCH_AUDIO_REPO: https://github.com/pytorch/audio.git
+FA_BRANCH: 0e60e394
+FA_REPO: https://github.com/Dao-AILab/flash-attention.git
+AITER_BRANCH: v0.1.23
+AITER_REPO: https://github.com/ROCm/aiter.git
+MORI_BRANCH: v1.1.0
+MORI_REPO: https://github.com/ROCm/mori.git
+VLLM_BASE_IMAGE=public.ecr.aws/q9t5s3a7/vllm-release-repo:ead1bf2fd16acf75-rocm-base
+MORI_NIC_BACKEND=all
+AINIC_VERSION=1.117.5-a-77

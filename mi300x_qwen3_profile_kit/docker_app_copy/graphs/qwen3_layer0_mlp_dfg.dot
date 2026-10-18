@@ -1,0 +1,19 @@
+digraph Qwen3MLP {
+  rankdir="LR";
+  graph [fontname="Helvetica"];
+  node [shape=box, fontname="Helvetica"];
+  "x" [label="x\\nplaceholder\\nx\\nshape=[1, 128, 5120]\\ndtype=torch.bfloat16"];
+  "gate_proj" [label="gate_proj\\ncall_module\\ngate_proj\\nshape=[1, 128, 25600]\\ndtype=torch.bfloat16"];
+  "silu" [label="silu\\ncall_function\\n<function silu at 0x7dfebcf2f740>\\nshape=[1, 128, 25600]\\ndtype=torch.bfloat16"];
+  "up_proj" [label="up_proj\\ncall_module\\nup_proj\\nshape=[1, 128, 25600]\\ndtype=torch.bfloat16"];
+  "mul" [label="mul\\ncall_function\\n<built-in function mul>\\nshape=[1, 128, 25600]\\ndtype=torch.bfloat16"];
+  "down_proj" [label="down_proj\\ncall_module\\ndown_proj\\nshape=[1, 128, 5120]\\ndtype=torch.bfloat16"];
+  "output" [label="output\\noutput\\noutput\\nshape=[1, 128, 5120]\\ndtype=torch.bfloat16"];
+  "x" -> "gate_proj";
+  "x" -> "up_proj";
+  "gate_proj" -> "silu";
+  "silu" -> "mul";
+  "up_proj" -> "mul";
+  "mul" -> "down_proj";
+  "down_proj" -> "output";
+}

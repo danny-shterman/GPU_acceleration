@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+LOG="/workspace/kit/results/vllm_rocprof_server.log"
+
+RUN_ID="$(date +%Y%m%d_%H%M%S)"
+TRACE_ROOT="/workspace/kit/results/qwen3_sys_trace/${RUN_ID}"
+RAW_DIR="${TRACE_ROOT}/raw"
+CONVERTED_DIR="${TRACE_ROOT}/converted"
+
 CONTAINER_NAME="${CONTAINER_NAME:-mi300x-qwen3-profile}"
 MODEL_ID="${MODEL_ID:-Qwen/Qwen3-32B}"
 PORT="${PORT:-8000}"
 
-LOG="/workspace/kit/results/vllm_server.log"
+LOG="/workspace/kit/results/vllm_rocprof_server.log"
 
 echo "Container: ${CONTAINER_NAME}"
 echo "Model:     ${MODEL_ID}"
@@ -26,17 +33,32 @@ echo
 echo "Starting Qwen3-32B..."
 
 # python code is used to generate a rotating log file for the vLLM server, so that the log file does not grow too large.
+echo "Starting Qwen3-32B under rocprofv3..."
+echo "Trace directory: ${TRACE_ROOT}"
+
 docker exec -d "${CONTAINER_NAME}" \
   bash -lc "
+    set -o pipefail
+
     cd /workspace/kit
 
-    rm -rf /workspace/kit/results/qwen3_sys_trace
-    mkdir -p /workspace/kit/results/qwen3_sys_trace
+    mkdir -p '${RAW_DIR}'
+    mkdir -p '${CONVERTED_DIR}'
 
-    exec rocprofv3 \
+    rm -f '${LOG}' '${LOG}.1' '${LOG}.2'
+
+    PROFILE_STATUS='${TRACE_ROOT}/profile_status.txt'
+    CONVERSION_LOG='${TRACE_ROOT}/conversion.log'
+
+    echo 'Starting rocprofv3 ROCPD collection...' \
+        > \"\$CONVERSION_LOG\"
+
+    set +e
+
+    rocprofv3 \
         --sys-trace \
-        --output-format pftrace \
-        --output-directory /workspace/kit/results/qwen3_sys_trace \
+        --output-format rocpd \
+        --output-directory '${RAW_DIR}' \
         -- \
         vllm serve '${MODEL_ID}' \
             --host 0.0.0.0 \
@@ -45,30 +67,89 @@ docker exec -d "${CONTAINER_NAME}" \
             --max-model-len 32768 \
             --gpu-memory-utilization 0.90 \
             --no-enable-prefix-caching \
-        2>&1 | python3 -u -c '
-            import sys
-            from logging.handlers import RotatingFileHandler
-            import logging
+        2>&1 | python3 -u /workspace/kit/11_rotate_log.py
 
-            path = "/workspace/kit/results/vllm_rocprof_server.log"
+    PIPE_RC=(\"\${PIPESTATUS[@]}\")
+    ROCPROF_RC=\"\${PIPE_RC[0]}\"
+    LOGGER_RC=\"\${PIPE_RC[1]}\"
 
-            handler = RotatingFileHandler(
-                path,
-                maxBytes=100 * 1024 * 1024,
-                backupCount=2
-            )
+    {
+        echo \"rocprofv3_exit_status=\${ROCPROF_RC}\"
+        echo \"logger_exit_status=\${LOGGER_RC}\"
+    } > \"\$PROFILE_STATUS\"
 
-            handler.setFormatter(logging.Formatter("%(message)s"))
+    echo >> \"\$CONVERSION_LOG\"
+    echo 'rocprofv3 finished.' >> \"\$CONVERSION_LOG\"
+    echo 'Searching for ROCPD databases...' >> \"\$CONVERSION_LOG\"
 
-            logger = logging.getLogger("vllm")
-            logger.setLevel(logging.INFO)
-            logger.addHandler(handler)
-            logger.propagate = False
+    mapfile -t DBS < <(
+        find '${RAW_DIR}' \
+            -type f \
+            -name '*_results.db' \
+            | sort
+    )
 
-            for line in sys.stdin:
-                logger.info(line.rstrip("\n"))
-        '
+    printf 'Found %d database(s).\n' \"\${#DBS[@]}\" \
+        >> \"\$CONVERSION_LOG\"
+
+    printf '%s\n' \"\${DBS[@]}\" \
+        >> \"\$CONVERSION_LOG\"
+
+    if (( \${#DBS[@]} == 0 )); then
+        echo 'ERROR: rocprofv3 generated no ROCPD database.' \
+            >> \"\$CONVERSION_LOG\"
+
+        exit 3
+    fi
+
+    echo >> \"\$CONVERSION_LOG\"
+    echo 'Converting ROCPD -> CSV + PFTrace...' \
+        >> \"\$CONVERSION_LOG\"
+
+    rocpd convert \
+        -i \"\${DBS[@]}\" \
+        -f csv pftrace \
+        -d '${CONVERTED_DIR}' \
+        -o qwen3_sys_trace \
+        >> \"\$CONVERSION_LOG\" 2>&1
+
+    CONVERT_RC=\$?
+
+    echo \"conversion_exit_status=\${CONVERT_RC}\" \
+        >> \"\$PROFILE_STATUS\"
+
+    if (( CONVERT_RC != 0 )); then
+        echo 'ERROR: rocpd conversion failed.' \
+            >> \"\$CONVERSION_LOG\"
+        exit \"\$CONVERT_RC\"
+    fi
+
+    echo 'ROCPD conversion completed successfully.' \
+        >> \"\$CONVERSION_LOG\"
+
+    exit \"\$ROCPROF_RC\"
   "
+#docker exec -d "${CONTAINER_NAME}" \
+#  bash -lc "
+#    cd /workspace/kit
+
+#    rm -rf /workspace/kit/results/qwen3_sys_trace
+#    mkdir -p /workspace/kit/results/qwen3_sys_trace
+
+#    exec rocprofv3 \
+#        --sys-trace \
+#        --output-format pftrace \
+#        --output-directory /workspace/kit/results/qwen3_sys_trace \
+#        -- \
+#        vllm serve '${MODEL_ID}' \
+#            --host 0.0.0.0 \
+#            --port '${PORT}' \
+#            --dtype bfloat16 \
+#            --max-model-len 32768 \
+#            --gpu-memory-utilization 0.90 \
+#            --no-enable-prefix-caching \
+#        2>&1 | python3 -u /workspace/kit/11_rotate_log.py
+#  "
 
 echo "vLLM launch command submitted."
 echo "Server log: ${LOG}"
