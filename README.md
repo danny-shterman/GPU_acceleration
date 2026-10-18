@@ -89,7 +89,7 @@ From mi300x_qwen3_profile_kit (02_serve_qwen3_32b.sh runs vllm serve '${MODEL_ID
 source .env
 ./02_serve_qwen3_32b.sh
 ```
-It could take quite time till VLLM server will be ready.
+It could take quite some time before the vLLM server is ready.
 
 Check the existing server from the host:
 ```
