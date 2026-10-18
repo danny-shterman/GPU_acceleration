@@ -112,8 +112,18 @@ python3 ./07_generate_prompts.py should be run from inside the docker:
 docker exec mi300x-qwen3-profile \
   bash -lc 'cd /workspace/kit && python3 ./07_generate_prompts.py'
 ```
-
-
+To kill vllm serve process running in docker use:
+```docker exec mi300x-qwen3-profile   bash -lc 'pkill -f "vllm serve" || true'
+```
+To check that vllm serve process doesn't run use:
+```docker exec mi300x-qwen3-profile   bash -lc 'ps -ef | grep -E "vllm|VLLM" | grep -v grep || true'
+```
+To kill vllm serve process running under rocprof in docker use:
+```docker exec mi300x-qwen3-profile   bash -lc 'pkill -f "rocprofv3" || true'
+```
+To check that vllm serve process under rocprof doesn't run use:
+```docker exec mi300x-qwen3-profile   bash -lc 'ps -ef | grep -E "vllm|VLLM" | grep -v grep || true'
+```
 
 
 
