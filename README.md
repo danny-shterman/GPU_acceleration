@@ -43,6 +43,14 @@ Exit docker if it works OK:
 ```
 exit
 ```
+If while trying to run ./01_start_container.sh you get something like:
+```
+docker: Error response from daemon: Conflict. The container name "/mi300x-qwen3-profile" is already in use by container "bd88366f51003eee9ecdeb5acb638408dc27ed28de6f216b4e5106f8f178e885". You have to remove (or rename) that container to be able to reuse that name.
+```
+Then in order to kill the old docker use:
+```
+docker rm -f bd88366f51003eee9ecdeb5acb638408dc27ed28de6f216b4e5106f8f178e885
+```
 
 Now:
 ```
