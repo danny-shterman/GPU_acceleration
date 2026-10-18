@@ -181,10 +181,6 @@ it executes:
 amd-smi monitor \
 --gpu 0 \
 --gfx \
-Rrequests = .
-Tbenchmark
-Ncompleted requests
-27
 --mem \
 --vram-usage \
 --pcie \
