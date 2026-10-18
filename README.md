@@ -259,7 +259,16 @@ docker exec mi300x-qwen3-profile \
     pkill -TERM -f '[r]ocprofv3' || true
   "
 ```
-wait 10 seconds and check again until the problematic process is gone.
+wait 10 seconds and check again until the problematic process is gone. Run this command until
+```
+rocm-smi --showpids; rocm-smi --showmeminfo vram
+```
+and
+```
+docker exec mi300x-qwen3-profile \
+  bash -lc "ps -eo pid,ppid,stat,cmd | grep -E '[v]llm|[p]ython|[r]ocprof' || true"
+```
+show that VRAM is available.
 
 
 
