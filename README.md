@@ -243,8 +243,7 @@ on startup is less than desired GPU memory utilization
 ```
 when running vllm serve then solve it as follows (check GPU VRAM state):
 ```
-rocm-smi --showpids
-rocm-smi --showmeminfo vram
+rocm-smi --showpids; rocm-smi --showmeminfo vram
 ```
 and
 ```
