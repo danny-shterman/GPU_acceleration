@@ -67,20 +67,19 @@ docker exec -d "${CONTAINER_NAME}" \
             --max-model-len 32768 \
             --gpu-memory-utilization 0.90 \
             --no-enable-prefix-caching \
-        2>&1 | python3 -u /workspace/kit/11_rotate_log.py
+        > '${LOG}' 2>&1
 
-    PIPE_RC=(\"\${PIPESTATUS[@]}\")
-    ROCPROF_RC=\"\${PIPE_RC[0]}\"
-    LOGGER_RC=\"\${PIPE_RC[1]}\"
+    ROCPROF_RC=\$?
 
-    {
-        echo \"rocprofv3_exit_status=\${ROCPROF_RC}\"
-        echo \"logger_exit_status=\${LOGGER_RC}\"
-    } > \"\$PROFILE_STATUS\"
+    echo \"rocprofv3_exit_status=\${ROCPROF_RC}\" \
+        > \"\$PROFILE_STATUS\"
 
     echo >> \"\$CONVERSION_LOG\"
-    echo 'rocprofv3 finished.' >> \"\$CONVERSION_LOG\"
-    echo 'Searching for ROCPD databases...' >> \"\$CONVERSION_LOG\"
+    echo 'rocprofv3 finished.' \
+        >> \"\$CONVERSION_LOG\"
+
+    echo 'Searching for ROCPD databases...' \
+        >> \"\$CONVERSION_LOG\"
 
     mapfile -t DBS < <(
         find '${RAW_DIR}' \
@@ -99,57 +98,57 @@ docker exec -d "${CONTAINER_NAME}" \
         echo 'ERROR: rocprofv3 generated no ROCPD database.' \
             >> \"\$CONVERSION_LOG\"
 
+        echo 'csv_conversion_exit_status=3' \
+            >> \"\$PROFILE_STATUS\"
+
+        echo 'pftrace_conversion_exit_status=3' \
+            >> \"\$PROFILE_STATUS\"
+
         exit 3
     fi
 
     echo >> \"\$CONVERSION_LOG\"
-    echo 'Converting ROCPD -> CSV + PFTrace...' \
+
+    echo 'Converting ROCPD -> CSV...' \
         >> \"\$CONVERSION_LOG\"
 
-    rocpd convert \
+    rocpd2csv \
         -i \"\${DBS[@]}\" \
-        -f csv pftrace \
         -d '${CONVERTED_DIR}' \
         -o qwen3_sys_trace \
         >> \"\$CONVERSION_LOG\" 2>&1
 
-    CONVERT_RC=\$?
+    CSV_RC=\$?
 
-    echo \"conversion_exit_status=\${CONVERT_RC}\" \
+    echo \"csv_conversion_exit_status=\${CSV_RC}\" \
         >> \"\$PROFILE_STATUS\"
 
-    if (( CONVERT_RC != 0 )); then
-        echo 'ERROR: rocpd conversion failed.' \
+    echo 'Converting ROCPD -> PFTrace...' \
+        >> \"\$CONVERSION_LOG\"
+
+    rocpd2pftrace \
+        -i \"\${DBS[@]}\" \
+        -d '${CONVERTED_DIR}' \
+        -o qwen3_sys_trace \
+        >> \"\$CONVERSION_LOG\" 2>&1
+
+    PFTRACE_RC=\$?
+
+    echo \"pftrace_conversion_exit_status=\${PFTRACE_RC}\" \
+        >> \"\$PROFILE_STATUS\"
+
+    if (( CSV_RC != 0 || PFTRACE_RC != 0 )); then
+        echo \"ERROR: conversion failed: CSV=\${CSV_RC}, PFTrace=\${PFTRACE_RC}\" \
             >> \"\$CONVERSION_LOG\"
-        exit \"\$CONVERT_RC\"
+
+        exit 4
     fi
 
-    echo 'ROCPD conversion completed successfully.' \
+    echo 'ROCPD conversions completed successfully.' \
         >> \"\$CONVERSION_LOG\"
 
     exit \"\$ROCPROF_RC\"
   "
-#docker exec -d "${CONTAINER_NAME}" \
-#  bash -lc "
-#    cd /workspace/kit
-
-#    rm -rf /workspace/kit/results/qwen3_sys_trace
-#    mkdir -p /workspace/kit/results/qwen3_sys_trace
-
-#    exec rocprofv3 \
-#        --sys-trace \
-#        --output-format pftrace \
-#        --output-directory /workspace/kit/results/qwen3_sys_trace \
-#        -- \
-#        vllm serve '${MODEL_ID}' \
-#            --host 0.0.0.0 \
-#            --port '${PORT}' \
-#            --dtype bfloat16 \
-#            --max-model-len 32768 \
-#            --gpu-memory-utilization 0.90 \
-#            --no-enable-prefix-caching \
-#        2>&1 | python3 -u /workspace/kit/11_rotate_log.py
-#  "
 
 echo "vLLM launch command submitted."
 echo "Server log: ${LOG}"
