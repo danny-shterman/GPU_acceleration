@@ -1,0 +1,887 @@
+.:
+total 172
+-rwxrwxr-x 1 hotaisle hotaisle  2482 Oct 13 08:52 04_bench_prefill.sh
+-rw-rw-r-- 1 hotaisle hotaisle   322 Oct 13 08:52 04_07.txt
+-rwxrwxr-x 1 hotaisle hotaisle  2095 Oct 13 08:52 01_start_container.sh
+-rwxrwxr-x 1 hotaisle hotaisle  2668 Oct 13 08:52 00_collect_system.sh
+drwxrwxr-x 2 hotaisle hotaisle  4096 Oct 13 08:52 __pycache__
+-rw-rw-r-- 1 hotaisle hotaisle  2259 Oct 13 08:52 README.md
+-rwxrwxr-x 1 hotaisle hotaisle   668 Oct 13 08:52 10_compute_profile_wrapper.sh
+-rwxrwxr-x 1 hotaisle hotaisle   900 Oct 13 08:52 09_trace_wrapper.sh
+-rwxrwxr-x 1 hotaisle hotaisle  2121 Oct 13 08:52 08_static_dfg.py
+-rwxrwxr-x 1 hotaisle hotaisle  2785 Oct 13 08:52 07_generate_prompts.py
+-rwxrwxr-x 1 hotaisle hotaisle   324 Oct 13 08:52 06b_build_and_run_hbm_bandwidth.sh
+-rwxrwxr-x 1 hotaisle hotaisle   600 Oct 13 08:52 06_build_and_run_hbm_latency.sh
+drwxrwxr-x 2 hotaisle hotaisle  4096 Oct 13 08:52 graphs
+-rw-rw-r-- 1 hotaisle hotaisle  2606 Oct 13 08:52 hbm_bandwidth.hip
+-rw-rw-r-- 1 hotaisle hotaisle 17692 Oct 13 08:52 mi300x_qwen3_end_to_end_dfg.dot
+-rw-rw-r-- 1 hotaisle hotaisle  4329 Oct 13 08:52 hbm_latency.hip
+-rw-rw-r-- 1 hotaisle hotaisle    34 Oct 13 08:52 requirements.txt
+drwxrwxr-x 2 hotaisle hotaisle  4096 Oct 13 08:52 prompts
+-rwxrwxr-x 1 hotaisle hotaisle  1226 Oct 13 08:52 validate_kit.sh
+-rwxrwxr-x 1 hotaisle hotaisle  2384 Oct 13 11:33 02_serve_qwen3_32b.sh
+-rwxrwxr-x 1 hotaisle hotaisle  5745 Oct 14 11:39 03_bench_serving.sh
+-rwxrwxr-x 1 hotaisle hotaisle 32264 Oct 14 11:59 hbm_latency
+drwxrwxr-x 3 hotaisle hotaisle  4096 Oct 15 13:29 env
+-rwxrwxr-x 1 hotaisle hotaisle   603 Oct 15 13:29 05_monitor_amd_smi.sh
+drwxr-xr-x 4 hotaisle hotaisle  4096 Oct 18 10:17 docker_app_copy
+-rw-rw-r-- 1 hotaisle hotaisle   461 Oct 18 11:27 11_rotate_log.py
+-rwxrwxr-x 1 hotaisle hotaisle  5458 Oct 18 13:31 02_serve_qwen3_32b_sys_trace.sh
+-rwxrwxr-x 1 hotaisle hotaisle  1527 Oct 19 06:58 change_names.sh
+drwxrwxr-x 3 hotaisle hotaisle  4096 Oct 19 06:59 results
+-rw-rw-r-- 1 hotaisle hotaisle     0 Oct 19 07:01 ls-ltr.log
+
+./__pycache__:
+total 8
+-rw-rw-r-- 1 hotaisle hotaisle 3989 Oct 13 08:52 08_static_dfg.cpython-314.pyc
+-rw-rw-r-- 1 hotaisle hotaisle 3786 Oct 13 08:52 07_generate_prompts.cpython-314.pyc
+
+./graphs:
+total 1300
+-rw-rw-r-- 1 hotaisle hotaisle 1225949 Oct 13 08:52 mi300x_qwen3_end_to_end_dfg.png
+-rw-rw-r-- 1 hotaisle hotaisle   99118 Oct 13 08:52 mi300x_qwen3_end_to_end_dfg.svg
+
+./prompts:
+total 2876
+-rw-rw-r-- 1 hotaisle hotaisle   14838 Oct 19 06:49 short.jsonl
+-rw-rw-r-- 1 hotaisle hotaisle  221014 Oct 19 06:49 medium.jsonl
+-rw-rw-r-- 1 hotaisle hotaisle 1758854 Oct 19 06:49 long.jsonl
+-rw-rw-r-- 1 hotaisle hotaisle  884406 Oct 19 06:49 large_batch.jsonl
+-rw-rw-r-- 1 hotaisle hotaisle     756 Oct 19 06:49 manifest.json
+-rw-rw-r-- 1 hotaisle hotaisle   57110 Oct 19 06:49 decode.jsonl
+
+./env:
+total 8
+-rw-rw-r-- 1 hotaisle hotaisle  211 Oct 15 13:29 pyvenv.cfg
+lrwxrwxrwx 1 hotaisle hotaisle    3 Oct 15 13:29 lib64 -> lib
+drwxrwxr-x 2 hotaisle hotaisle 4096 Oct 15 13:29 bin
+
+./env/bin:
+total 0
+lrwxrwxrwx 1 hotaisle hotaisle  7 Oct 15 13:29 python3.12 -> python3
+lrwxrwxrwx 1 hotaisle hotaisle 16 Oct 15 13:29 python3 -> /usr/bin/python3
+lrwxrwxrwx 1 hotaisle hotaisle  7 Oct 15 13:29 python -> python3
+
+./docker_app_copy:
+total 16
+drwxr-xr-x 5 hotaisle hotaisle 4096 Oct  3 07:59 vllm
+-rw-r--r-- 1 hotaisle hotaisle   30 Oct  3 07:59 libkineto.conf
+-rw-r--r-- 1 hotaisle hotaisle  901 Oct  3 07:59 versions.txt
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct 18 10:17 graphs
+
+./docker_app_copy/vllm:
+total 12
+drwxr-xr-x  9 hotaisle hotaisle 4096 Oct  3 07:45 benchmarks
+drwxr-xr-x 16 hotaisle hotaisle 4096 Oct  3 07:45 examples
+drwxr-xr-x  2 hotaisle hotaisle 4096 Oct  3 07:59 docker
+
+./docker_app_copy/vllm/benchmarks:
+total 268
+-rw-r--r-- 1 hotaisle hotaisle     0 Oct  3 07:45 __init__.py
+-rw-r--r-- 1 hotaisle hotaisle  1028 Oct  3 07:45 README.md
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 structured_schemas
+-rw-r--r-- 1 hotaisle hotaisle 22706 Oct  3 07:45 sonnet.txt
+-rwxr-xr-x 1 hotaisle hotaisle  3819 Oct  3 07:45 run_structured_output_benchmark.sh
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 replayssm
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 multi_turn
+-rwxr-xr-x 1 hotaisle hotaisle  8870 Oct  3 07:45 kv_cache_watermark.sh
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 fused_kernels
+-rw-r--r-- 1 hotaisle hotaisle  1507 Oct  3 07:45 benchmark_utils.py
+-rw-r--r-- 1 hotaisle hotaisle 15343 Oct  3 07:45 benchmark_topk_topp.py
+-rw-r--r-- 1 hotaisle hotaisle   498 Oct  3 07:45 benchmark_throughput.py
+-rw-r--r-- 1 hotaisle hotaisle 38370 Oct  3 07:45 benchmark_serving_structured_output.py
+-rw-r--r-- 1 hotaisle hotaisle   483 Oct  3 07:45 benchmark_serving.py
+-rw-r--r-- 1 hotaisle hotaisle  6705 Oct  3 07:45 benchmark_prioritization.py
+-rw-r--r-- 1 hotaisle hotaisle 10375 Oct  3 07:45 benchmark_prefix_caching.py
+-rw-r--r-- 1 hotaisle hotaisle  3279 Oct  3 07:45 benchmark_prefix_block_hash.py
+-rw-r--r-- 1 hotaisle hotaisle 12422 Oct  3 07:45 benchmark_pin_memory.py
+-rw-r--r-- 1 hotaisle hotaisle  6559 Oct  3 07:45 benchmark_ngram_proposer.py
+-rw-r--r-- 1 hotaisle hotaisle  6445 Oct  3 07:45 benchmark_long_document_qa_throughput.py
+-rw-r--r-- 1 hotaisle hotaisle   489 Oct  3 07:45 benchmark_latency.py
+-rw-r--r-- 1 hotaisle hotaisle 13631 Oct  3 07:45 benchmark_hidden_state_extraction.py
+-rw-r--r-- 1 hotaisle hotaisle  3596 Oct  3 07:45 benchmark_hash.py
+-rw-r--r-- 1 hotaisle hotaisle  2213 Oct  3 07:45 benchmark_block_pool.py
+-rwxr-xr-x 1 hotaisle hotaisle 13396 Oct  3 07:45 benchmark_batch_invariance.py
+-rw-r--r-- 1 hotaisle hotaisle 25927 Oct  3 07:45 backend_request_func.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 auto_tune
+drwxr-xr-x 3 hotaisle hotaisle  4096 Oct  3 07:45 attention_benchmarks
+drwxr-xr-x 5 hotaisle hotaisle  4096 Oct  3 07:45 kernels
+
+./docker_app_copy/vllm/benchmarks/structured_schemas:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 474 Oct  3 07:45 structured_schema_1.json
+
+./docker_app_copy/vllm/benchmarks/replayssm:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 9186 Oct  3 07:45 e2e_decode_speedup.py
+
+./docker_app_copy/vllm/benchmarks/multi_turn:
+total 120
+-rw-r--r-- 1 hotaisle hotaisle    88 Oct  3 07:45 requirements.txt
+-rw-r--r-- 1 hotaisle hotaisle   799 Oct  3 07:45 generate_multi_turn.json
+-rw-r--r-- 1 hotaisle hotaisle 11300 Oct  3 07:45 convert_sharegpt_to_openai.py
+-rw-r--r-- 1 hotaisle hotaisle 62299 Oct  3 07:45 benchmark_serving_multi_turn.py
+-rw-r--r-- 1 hotaisle hotaisle   599 Oct  3 07:45 bench_utils.py
+-rw-r--r-- 1 hotaisle hotaisle 21219 Oct  3 07:45 bench_dataset.py
+-rw-r--r-- 1 hotaisle hotaisle  6451 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/benchmarks/fused_kernels:
+total 28
+-rw-r--r-- 1 hotaisle hotaisle 5218 Oct  3 07:45 silu_mul_block_quant_benchmark.py
+-rw-r--r-- 1 hotaisle hotaisle 8877 Oct  3 07:45 merge_attn_states_benchmarks.py
+-rw-r--r-- 1 hotaisle hotaisle 7433 Oct  3 07:45 layernorm_rms_benchmarks.py
+
+./docker_app_copy/vllm/benchmarks/auto_tune:
+total 36
+-rwxr-xr-x 1 hotaisle hotaisle  4246 Oct  3 07:45 batch_auto_tune.sh
+-rw-r--r-- 1 hotaisle hotaisle 12774 Oct  3 07:45 auto_tune.sh
+-rw-r--r-- 1 hotaisle hotaisle 10596 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/benchmarks/attention_benchmarks:
+total 168
+-rw-r--r-- 1 hotaisle hotaisle 19385 Oct  3 07:45 common.py
+-rw-r--r-- 1 hotaisle hotaisle 56666 Oct  3 07:45 benchmark.py
+-rw-r--r-- 1 hotaisle hotaisle  8169 Oct  3 07:45 batch_spec.py
+-rw-r--r-- 1 hotaisle hotaisle   888 Oct  3 07:45 __init__.py
+-rw-r--r-- 1 hotaisle hotaisle  7814 Oct  3 07:45 README.md
+-rw-r--r-- 1 hotaisle hotaisle 18375 Oct  3 07:45 runner.py
+-rw-r--r-- 1 hotaisle hotaisle 47633 Oct  3 07:45 mla_runner.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 configs
+
+./docker_app_copy/vllm/benchmarks/attention_benchmarks/configs:
+total 60
+-rw-r--r-- 1 hotaisle hotaisle 3533 Oct  3 07:45 standard_prefill.yaml
+-rw-r--r-- 1 hotaisle hotaisle 3961 Oct  3 07:45 standard_decode.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1429 Oct  3 07:45 standard_attention.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1850 Oct  3 07:45 speculative_decode.yaml
+-rw-r--r-- 1 hotaisle hotaisle 2550 Oct  3 07:45 reorder_threshold.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1002 Oct  3 07:45 mla_sparse_prefill.yaml
+-rw-r--r-- 1 hotaisle hotaisle 7528 Oct  3 07:45 mla_sparse_mha_vs_mqa.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1160 Oct  3 07:45 mla_sparse_masked_mha_vs_mqa_glm5.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1987 Oct  3 07:45 mla_sparse_masked_mha_vs_mqa.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1690 Oct  3 07:45 mla_sparse_decode.yaml
+-rw-r--r-- 1 hotaisle hotaisle 2187 Oct  3 07:45 mla_prefill.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1783 Oct  3 07:45 mla_mixed_batch.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1040 Oct  3 07:45 mla_fa4_fp8_output.yaml
+-rw-r--r-- 1 hotaisle hotaisle 2010 Oct  3 07:45 mla_decode.yaml
+
+./docker_app_copy/vllm/benchmarks/kernels:
+total 836
+-rw-r--r-- 1 hotaisle hotaisle  2783 Oct  3 07:45 weight_shapes.py
+-rw-r--r-- 1 hotaisle hotaisle  6753 Oct  3 07:45 utils.py
+-rw-r--r-- 1 hotaisle hotaisle     6 Oct  3 07:45 requirements.txt
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 ir
+-rw-r--r-- 1 hotaisle hotaisle  2008 Oct  3 07:45 graph_machete_bench.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 deepgemm
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 cpu
+-rw-r--r-- 1 hotaisle hotaisle  6273 Oct  3 07:45 benchmark_vocab_parallel_embedding.py
+-rw-r--r-- 1 hotaisle hotaisle 10168 Oct  3 07:45 benchmark_vit_fp8_attn.py
+-rw-r--r-- 1 hotaisle hotaisle  4218 Oct  3 07:45 benchmark_vit_bilinear_pos_embed.py
+-rw-r--r-- 1 hotaisle hotaisle  4169 Oct  3 07:45 benchmark_vit_aiter_fp8_attn.py
+-rw-r--r-- 1 hotaisle hotaisle  9624 Oct  3 07:45 benchmark_trtllm_prefill_attention.py
+-rw-r--r-- 1 hotaisle hotaisle  9175 Oct  3 07:45 benchmark_trtllm_decode_attention.py
+-rw-r--r-- 1 hotaisle hotaisle 12437 Oct  3 07:45 benchmark_thinking_budget.py
+-rw-r--r-- 1 hotaisle hotaisle 23347 Oct  3 07:45 benchmark_silu_mul_fp8_quant.py
+-rw-r--r-- 1 hotaisle hotaisle  2157 Oct  3 07:45 benchmark_shapes.py
+-rw-r--r-- 1 hotaisle hotaisle 26224 Oct  3 07:45 benchmark_selective_state_update.py
+-rw-r--r-- 1 hotaisle hotaisle  5042 Oct  3 07:45 benchmark_router_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  4056 Oct  3 07:45 benchmark_rope.py
+-rw-r--r-- 1 hotaisle hotaisle  6248 Oct  3 07:45 benchmark_reshape_and_cache_flash.py
+-rw-r--r-- 1 hotaisle hotaisle  4936 Oct  3 07:45 benchmark_reshape_and_cache.py
+-rw-r--r-- 1 hotaisle hotaisle  3797 Oct  3 07:45 benchmark_relu_squared.py
+-rw-r--r-- 1 hotaisle hotaisle  6334 Oct  3 07:45 benchmark_rdna_hybrid_w4a16_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  3340 Oct  3 07:45 benchmark_quant.py
+-rw-r--r-- 1 hotaisle hotaisle  4904 Oct  3 07:45 benchmark_persistent_topk.py
+-rw-r--r-- 1 hotaisle hotaisle  8282 Oct  3 07:45 benchmark_per_token_quant_fp8.py
+-rw-r--r-- 1 hotaisle hotaisle  4978 Oct  3 07:45 benchmark_per_token_group_quant.py
+-rw-r--r-- 1 hotaisle hotaisle  6108 Oct  3 07:45 benchmark_paged_attention.py
+-rw-r--r-- 1 hotaisle hotaisle  6171 Oct  3 07:45 benchmark_nvfp4_qutlass.py
+-rw-r--r-- 1 hotaisle hotaisle  6415 Oct  3 07:45 benchmark_nvfp4_quant.py
+-rw-r--r-- 1 hotaisle hotaisle  6269 Oct  3 07:45 benchmark_nvfp4_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  5773 Oct  3 07:45 benchmark_mxfp4_qutlass.py
+-rw-r--r-- 1 hotaisle hotaisle 15031 Oct  3 07:45 benchmark_multimem_reduce_scatter.py
+-rw-r--r-- 1 hotaisle hotaisle 10848 Oct  3 07:45 benchmark_mrope.py
+-rw-r--r-- 1 hotaisle hotaisle 10706 Oct  3 07:45 benchmark_moe_permute_unpermute.py
+-rw-r--r-- 1 hotaisle hotaisle  9605 Oct  3 07:45 benchmark_moe_defaults.py
+-rw-r--r-- 1 hotaisle hotaisle  4880 Oct  3 07:45 benchmark_moe_align_block_size.py
+-rw-r--r-- 1 hotaisle hotaisle 37945 Oct  3 07:45 benchmark_moe.py
+-rw-r--r-- 1 hotaisle hotaisle  4666 Oct  3 07:45 benchmark_mla_k_concat.py
+-rw-r--r-- 1 hotaisle hotaisle  8213 Oct  3 07:45 benchmark_marlin.py
+-rw-r--r-- 1 hotaisle hotaisle 22029 Oct  3 07:45 benchmark_machete.py
+-rw-r--r-- 1 hotaisle hotaisle 52152 Oct  3 07:45 benchmark_lora.py
+-rw-r--r-- 1 hotaisle hotaisle  3034 Oct  3 07:45 benchmark_layernorm.py
+-rw-r--r-- 1 hotaisle hotaisle  7085 Oct  3 07:45 benchmark_kimi_k3_sp_collectives.py
+-rw-r--r-- 1 hotaisle hotaisle 29730 Oct  3 07:45 benchmark_kimi_k3_latent_moe_tail.py
+-rw-r--r-- 1 hotaisle hotaisle  7579 Oct  3 07:45 benchmark_kimi_k3_kda_projection.py
+-rw-r--r-- 1 hotaisle hotaisle 11141 Oct  3 07:45 benchmark_kimi_k3_kda_decode.py
+-rw-r--r-- 1 hotaisle hotaisle  7140 Oct  3 07:45 benchmark_kimi_k3_attn_res.py
+-rw-r--r-- 1 hotaisle hotaisle 13320 Oct  3 07:45 benchmark_k3_cutedsl_residual.py
+-rw-r--r-- 1 hotaisle hotaisle  5301 Oct  3 07:45 benchmark_int8_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  5067 Oct  3 07:45 benchmark_inkling_qkvr_prep.py
+-rw-r--r-- 1 hotaisle hotaisle  6666 Oct  3 07:45 benchmark_hy_v4_ihc.py
+-rw-r--r-- 1 hotaisle hotaisle 12796 Oct  3 07:45 benchmark_grouped_gemm_cutlass.py
+-rw-r--r-- 1 hotaisle hotaisle 14178 Oct  3 07:45 benchmark_gemm_rs_ar.py
+-rw-r--r-- 1 hotaisle hotaisle  2824 Oct  3 07:45 benchmark_gelu_and_mul_sparse.py
+-rw-r--r-- 1 hotaisle hotaisle  3227 Oct  3 07:45 benchmark_fused_topk.py
+-rw-r--r-- 1 hotaisle hotaisle  3440 Oct  3 07:45 benchmark_fused_q_cutedsl.py
+-rw-r--r-- 1 hotaisle hotaisle 13073 Oct  3 07:45 benchmark_fused_moe_lora_one_shot.py
+-rw-r--r-- 1 hotaisle hotaisle 40822 Oct  3 07:45 benchmark_fused_collective.py
+-rw-r--r-- 1 hotaisle hotaisle  4914 Oct  3 07:45 benchmark_fp8_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  9930 Oct  3 07:45 benchmark_flydsl_moe_w4a16.py
+-rw-r--r-- 1 hotaisle hotaisle  9575 Oct  3 07:45 benchmark_dsv41_mega_attn.py
+-rw-r--r-- 1 hotaisle hotaisle 25805 Oct  3 07:45 benchmark_device_communicators.py
+-rw-r--r-- 1 hotaisle hotaisle 16478 Oct  3 07:45 benchmark_cutlass_moe_nvfp4.py
+-rw-r--r-- 1 hotaisle hotaisle 12299 Oct  3 07:45 benchmark_cutlass_moe_fp8.py
+-rw-r--r-- 1 hotaisle hotaisle  7478 Oct  3 07:45 benchmark_cp_gather.py
+-rw-r--r-- 1 hotaisle hotaisle  5224 Oct  3 07:45 benchmark_block_fp8_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  3264 Oct  3 07:45 benchmark_activation.py
+-rw-r--r-- 1 hotaisle hotaisle  7138 Oct  3 07:45 benchmark_2d_silu_mul_fp8_quant.py
+-rw-r--r-- 1 hotaisle hotaisle  5200 Oct  3 07:45 bench_cp_gather_fp8.py
+-rw-r--r-- 1 hotaisle hotaisle  2938 Oct  3 07:45 bench_concat_mla_q.py
+-rw-r--r-- 1 hotaisle hotaisle     0 Oct  3 07:45 __init__.py
+-rw-r--r-- 1 hotaisle hotaisle 12293 Oct  3 07:45 benchmark_w8a8_block_fp8.py
+
+./docker_app_copy/vllm/benchmarks/kernels/ir:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle   954 Oct  3 07:45 shapes.py
+-rw-r--r-- 1 hotaisle hotaisle 11932 Oct  3 07:45 bench_ir_ops.py
+-rw-r--r-- 1 hotaisle hotaisle     0 Oct  3 07:45 __init__.py
+
+./docker_app_copy/vllm/benchmarks/kernels/deepgemm:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle 14122 Oct  3 07:45 benchmark_fp8_block_dense_gemm.py
+-rw-r--r-- 1 hotaisle hotaisle  7958 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/benchmarks/kernels/cpu:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle  5362 Oct  3 07:45 benchmark_cpu_fused_moe.py
+-rw-r--r-- 1 hotaisle hotaisle 10175 Oct  3 07:45 benchmark_cpu_attn.py
+
+./docker_app_copy/vllm/examples:
+total 292
+drwxr-xr-x 10 hotaisle hotaisle  4096 Oct  3 07:45 disaggregated
+drwxr-xr-x  3 hotaisle hotaisle  4096 Oct  3 07:45 deployment
+drwxr-xr-x  4 hotaisle hotaisle  4096 Oct  3 07:45 basic
+drwxr-xr-x  5 hotaisle hotaisle  4096 Oct  3 07:45 applications
+-rw-r--r--  1 hotaisle hotaisle     0 Oct  3 07:45 __init__.py
+-rw-r--r--  1 hotaisle hotaisle  2715 Oct  3 07:45 tool_chat_template_xlam_qwen.jinja
+-rw-r--r--  1 hotaisle hotaisle  3262 Oct  3 07:45 tool_chat_template_xlam_llama.jinja
+-rw-r--r--  1 hotaisle hotaisle  3134 Oct  3 07:45 tool_chat_template_toolace.jinja
+-rw-r--r--  1 hotaisle hotaisle  6211 Oct  3 07:45 tool_chat_template_qwen3coder.jinja
+-rw-r--r--  1 hotaisle hotaisle  2330 Oct  3 07:45 tool_chat_template_phi4_mini.jinja
+-rw-r--r--  1 hotaisle hotaisle  7328 Oct  3 07:45 tool_chat_template_muse_glimmer.jinja
+-rw-r--r--  1 hotaisle hotaisle  4763 Oct  3 07:45 tool_chat_template_mistral_parallel.jinja
+-rw-r--r--  1 hotaisle hotaisle  6660 Oct  3 07:45 tool_chat_template_mistral3.jinja
+-rw-r--r--  1 hotaisle hotaisle  3962 Oct  3 07:45 tool_chat_template_mistral.jinja
+-rw-r--r--  1 hotaisle hotaisle  7347 Oct  3 07:45 tool_chat_template_llama4_pythonic.jinja
+-rw-r--r--  1 hotaisle hotaisle  4594 Oct  3 07:45 tool_chat_template_llama4_json.jinja
+-rw-r--r--  1 hotaisle hotaisle  4349 Oct  3 07:45 tool_chat_template_llama3.2_pythonic.jinja
+-rw-r--r--  1 hotaisle hotaisle  5816 Oct  3 07:45 tool_chat_template_llama3.2_json.jinja
+-rw-r--r--  1 hotaisle hotaisle  5255 Oct  3 07:45 tool_chat_template_llama3.1_json.jinja
+-rw-r--r--  1 hotaisle hotaisle  2318 Oct  3 07:45 tool_chat_template_internlm2_tool.jinja
+-rw-r--r--  1 hotaisle hotaisle  6291 Oct  3 07:45 tool_chat_template_hunyuan_a13b.jinja
+-rw-r--r--  1 hotaisle hotaisle  5226 Oct  3 07:45 tool_chat_template_hermes.jinja
+-rw-r--r--  1 hotaisle hotaisle  4885 Oct  3 07:45 tool_chat_template_granite_20b_fc.jinja
+-rw-r--r--  1 hotaisle hotaisle  1665 Oct  3 07:45 tool_chat_template_granite.jinja
+-rw-r--r--  1 hotaisle hotaisle  1804 Oct  3 07:45 tool_chat_template_glm4.jinja
+-rw-r--r--  1 hotaisle hotaisle 18653 Oct  3 07:45 tool_chat_template_gemma4.jinja
+-rw-r--r--  1 hotaisle hotaisle  5662 Oct  3 07:45 tool_chat_template_gemma3_pythonic.jinja
+-rw-r--r--  1 hotaisle hotaisle  1644 Oct  3 07:45 tool_chat_template_functiongemma.jinja
+-rw-r--r--  1 hotaisle hotaisle  4355 Oct  3 07:45 tool_chat_template_deepseekv31.jinja
+-rw-r--r--  1 hotaisle hotaisle  4386 Oct  3 07:45 tool_chat_template_deepseekv3.jinja
+-rw-r--r--  1 hotaisle hotaisle  4780 Oct  3 07:45 tool_chat_template_deepseekr1.jinja
+-rw-r--r--  1 hotaisle hotaisle 16930 Oct  3 07:45 tool_chat_template_apertus.jinja
+drwxr-xr-x  2 hotaisle hotaisle  4096 Oct  3 07:45 tool_calling
+-rw-r--r--  1 hotaisle hotaisle   407 Oct  3 07:45 template_teleflm.jinja
+-rw-r--r--  1 hotaisle hotaisle  1026 Oct  3 07:45 template_inkbot.jinja
+-rw-r--r--  1 hotaisle hotaisle   558 Oct  3 07:45 template_falcon_180b.jinja
+-rw-r--r--  1 hotaisle hotaisle   471 Oct  3 07:45 template_falcon.jinja
+-rw-r--r--  1 hotaisle hotaisle   316 Oct  3 07:45 template_chatml.jinja
+-rw-r--r--  1 hotaisle hotaisle   637 Oct  3 07:45 template_chatglm2.jinja
+-rw-r--r--  1 hotaisle hotaisle   629 Oct  3 07:45 template_chatglm.jinja
+-rw-r--r--  1 hotaisle hotaisle   667 Oct  3 07:45 template_alpaca.jinja
+drwxr-xr-x  4 hotaisle hotaisle  4096 Oct  3 07:45 speech_to_text
+drwxr-xr-x  2 hotaisle hotaisle  4096 Oct  3 07:45 scale_out
+drwxr-xr-x  2 hotaisle hotaisle  4096 Oct  3 07:45 rl
+drwxr-xr-x  2 hotaisle hotaisle  4096 Oct  3 07:45 reasoning
+drwxr-xr-x  3 hotaisle hotaisle  4096 Oct  3 07:45 ray_serving
+drwxr-xr-x  9 hotaisle hotaisle  4096 Oct  3 07:45 pooling
+drwxr-xr-x  6 hotaisle hotaisle  4096 Oct  3 07:45 observability
+drwxr-xr-x  3 hotaisle hotaisle  4096 Oct  3 07:45 generate
+drwxr-xr-x 19 hotaisle hotaisle  4096 Oct  3 07:45 features
+
+./docker_app_copy/vllm/examples/disaggregated:
+total 32
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 mooncake_connector
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct  3 07:45 lmcache
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 kv_load_failure_recovery_offline
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 flexkv_connector
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 example_connector
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 ec_both_encoder
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 disaggregated_serving
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 disaggregated_encoder
+
+./docker_app_copy/vllm/examples/disaggregated/mooncake_connector:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle  7890 Oct  3 07:45 run_mooncake_connector.sh
+-rw-r--r-- 1 hotaisle hotaisle 11453 Oct  3 07:45 mooncake_connector_proxy.py
+
+./docker_app_copy/vllm/examples/disaggregated/lmcache:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle 4201 Oct  3 07:45 kv_cache_sharing_lmcache_v1.py
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct  3 07:45 disagg_prefill_lmcache_v1
+-rwxr-xr-x 1 hotaisle hotaisle 1906 Oct  3 07:45 cpu_offload_lmcache_mp.sh
+-rw-r--r-- 1 hotaisle hotaisle 3308 Oct  3 07:45 cpu_offload_lmcache.py
+-rw-r--r-- 1 hotaisle hotaisle 2830 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/disaggregated/lmcache/disagg_prefill_lmcache_v1:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle 2205 Oct  3 07:45 disagg_vllm_launcher.sh
+-rw-r--r-- 1 hotaisle hotaisle 6405 Oct  3 07:45 disagg_proxy_server.py
+-rw-r--r-- 1 hotaisle hotaisle 3682 Oct  3 07:45 disagg_example_nixl.sh
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 configs
+
+./docker_app_copy/vllm/examples/disaggregated/lmcache/disagg_prefill_lmcache_v1/configs:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 267 Oct  3 07:45 lmcache-prefiller-config.yaml
+-rw-r--r-- 1 hotaisle hotaisle 269 Oct  3 07:45 lmcache-decoder-config.yaml
+
+./docker_app_copy/vllm/examples/disaggregated/kv_load_failure_recovery_offline:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle 1273 Oct  3 07:45 run.sh
+-rw-r--r-- 1 hotaisle hotaisle 1659 Oct  3 07:45 prefill_example.py
+-rw-r--r-- 1 hotaisle hotaisle 5533 Oct  3 07:45 load_recovery_example_connector.py
+-rw-r--r-- 1 hotaisle hotaisle 2618 Oct  3 07:45 decode_example.py
+-rw-r--r-- 1 hotaisle hotaisle 1754 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/disaggregated/flexkv_connector:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 7094 Oct  3 07:45 prefix_caching_flexkv.py
+
+./docker_app_copy/vllm/examples/disaggregated/example_connector:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle  346 Oct  3 07:45 run.sh
+-rw-r--r-- 1 hotaisle hotaisle 1635 Oct  3 07:45 prefill_example.py
+-rw-r--r-- 1 hotaisle hotaisle 1510 Oct  3 07:45 decode_example.py
+-rw-r--r-- 1 hotaisle hotaisle  652 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/disaggregated/ec_both_encoder:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 2093 Oct  3 07:45 ec_both_encoder.sh
+
+./docker_app_copy/vllm/examples/disaggregated/disaggregated_serving:
+total 88
+-rw-r--r-- 1 hotaisle hotaisle 19619 Oct  3 07:45 moriio_toy_proxy_server.py
+-rw-r--r-- 1 hotaisle hotaisle  2200 Oct  3 07:45 kv_events.sh
+-rw-r--r-- 1 hotaisle hotaisle 17115 Oct  3 07:45 disagg_proxy_pushconnector_demo.py
+-rw-r--r-- 1 hotaisle hotaisle 18808 Oct  3 07:45 disagg_proxy_multiturn.py
+-rw-r--r-- 1 hotaisle hotaisle 18129 Oct  3 07:45 disagg_proxy_demo.py
+-rw-r--r-- 1 hotaisle hotaisle   335 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/disaggregated/disaggregated_encoder:
+total 96
+-rw-r--r-- 1 hotaisle hotaisle 62633 Oct  3 07:45 disagg_epd_proxy.py
+-rw-r--r-- 1 hotaisle hotaisle  7049 Oct  3 07:45 disagg_1e1pd_example.sh
+-rw-r--r-- 1 hotaisle hotaisle  8209 Oct  3 07:45 disagg_1e1p1d_example.sh
+-rw-r--r-- 1 hotaisle hotaisle  9582 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/deployment:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle  894 Oct  3 07:45 sagemaker-entrypoint.sh
+-rw-r--r-- 1 hotaisle hotaisle 2352 Oct  3 07:45 llm_engine_example.py
+drwxr-xr-x 4 hotaisle hotaisle 4096 Oct  3 07:45 chart-helm
+-rw-r--r-- 1 hotaisle hotaisle 3622 Oct  3 07:45 async_llm_streaming.py
+
+./docker_app_copy/vllm/examples/deployment/chart-helm:
+total 44
+-rw-r--r-- 1 hotaisle hotaisle  5353 Oct  3 07:45 values.yaml
+-rw-r--r-- 1 hotaisle hotaisle 10081 Oct  3 07:45 values.schema.json
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 tests
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 templates
+-rw-r--r-- 1 hotaisle hotaisle  1033 Oct  3 07:45 lintconf.yaml
+-rw-r--r-- 1 hotaisle hotaisle    50 Oct  3 07:45 ct.yaml
+-rw-r--r-- 1 hotaisle hotaisle  1404 Oct  3 07:45 README.md
+-rw-r--r-- 1 hotaisle hotaisle   827 Oct  3 07:45 Chart.yaml
+
+./docker_app_copy/vllm/examples/deployment/chart-helm/tests:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle  533 Oct  3 07:45 service_test.yaml
+-rw-r--r-- 1 hotaisle hotaisle  831 Oct  3 07:45 pvc_test.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1764 Oct  3 07:45 job_test.yaml
+-rw-r--r-- 1 hotaisle hotaisle  398 Oct  3 07:45 hpa_test.yaml
+-rw-r--r-- 1 hotaisle hotaisle 4995 Oct  3 07:45 deployment_test.yaml
+
+./docker_app_copy/vllm/examples/deployment/chart-helm/templates:
+total 48
+-rw-r--r-- 1 hotaisle hotaisle  406 Oct  3 07:45 service.yaml
+-rw-r--r-- 1 hotaisle hotaisle  232 Oct  3 07:45 secrets.yaml
+-rw-r--r-- 1 hotaisle hotaisle  294 Oct  3 07:45 pvc.yaml
+-rw-r--r-- 1 hotaisle hotaisle  211 Oct  3 07:45 poddisruptionbudget.yaml
+-rw-r--r-- 1 hotaisle hotaisle 1347 Oct  3 07:45 job.yaml
+-rw-r--r-- 1 hotaisle hotaisle  973 Oct  3 07:45 hpa.yaml
+-rw-r--r-- 1 hotaisle hotaisle 4751 Oct  3 07:45 deployment.yaml
+-rw-r--r-- 1 hotaisle hotaisle  118 Oct  3 07:45 custom-objects.yaml
+-rw-r--r-- 1 hotaisle hotaisle  234 Oct  3 07:45 configmap.yaml
+-rw-r--r-- 1 hotaisle hotaisle 4242 Oct  3 07:45 _helpers.tpl
+
+./docker_app_copy/vllm/examples/basic:
+total 8
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 online_serving
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 offline_inference
+
+./docker_app_copy/vllm/examples/basic/online_serving:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 2096 Oct  3 07:45 watermark_detection_server.py
+-rw-r--r-- 1 hotaisle hotaisle 1230 Oct  3 07:45 openai_completion_client.py
+-rw-r--r-- 1 hotaisle hotaisle 1707 Oct  3 07:45 openai_chat_completion_client.py
+
+./docker_app_copy/vllm/examples/basic/offline_inference:
+total 28
+-rw-r--r-- 1 hotaisle hotaisle 1285 Oct  3 07:45 score.py
+-rw-r--r-- 1 hotaisle hotaisle 2098 Oct  3 07:45 generate.py
+-rw-r--r-- 1 hotaisle hotaisle 1340 Oct  3 07:45 embed.py
+-rw-r--r-- 1 hotaisle hotaisle 1457 Oct  3 07:45 classify.py
+-rw-r--r-- 1 hotaisle hotaisle 3396 Oct  3 07:45 chat.py
+-rw-r--r-- 1 hotaisle hotaisle 1024 Oct  3 07:45 basic.py
+-rw-r--r-- 1 hotaisle hotaisle 2773 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/applications:
+total 12
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 rag
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 chatbot
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 api_server
+
+./docker_app_copy/vllm/examples/applications/rag:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle 6872 Oct  3 07:45 retrieval_augmented_generation_with_llamaindex.py
+-rw-r--r-- 1 hotaisle hotaisle 7378 Oct  3 07:45 retrieval_augmented_generation_with_langchain.py
+
+./docker_app_copy/vllm/examples/applications/chatbot:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle 10563 Oct  3 07:45 streamlit_openai_chatbot_webserver.py
+-rw-r--r-- 1 hotaisle hotaisle  2271 Oct  3 07:45 gradio_webserver.py
+-rw-r--r-- 1 hotaisle hotaisle  3548 Oct  3 07:45 gradio_openai_chatbot_webserver.py
+
+./docker_app_copy/vllm/examples/applications/api_server:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 5847 Oct  3 07:45 server.py
+-rw-r--r-- 1 hotaisle hotaisle 2828 Oct  3 07:45 client.py
+
+./docker_app_copy/vllm/examples/tool_calling:
+total 56
+-rw-r--r-- 1 hotaisle hotaisle 2427 Oct  3 07:45 openai_responses_client_with_tools.py
+-rw-r--r-- 1 hotaisle hotaisle 6036 Oct  3 07:45 openai_responses_client_with_mcp_tools.py
+-rw-r--r-- 1 hotaisle hotaisle 9221 Oct  3 07:45 openai_chat_completion_client_with_tools_xlam_streaming.py
+-rw-r--r-- 1 hotaisle hotaisle 7836 Oct  3 07:45 openai_chat_completion_client_with_tools_xlam.py
+-rw-r--r-- 1 hotaisle hotaisle 4175 Oct  3 07:45 openai_chat_completion_client_with_tools_required.py
+-rw-r--r-- 1 hotaisle hotaisle 5916 Oct  3 07:45 openai_chat_completion_client_with_tools.py
+-rw-r--r-- 1 hotaisle hotaisle 4529 Oct  3 07:45 chat_with_tools_offline.py
+
+./docker_app_copy/vllm/examples/speech_to_text:
+total 8
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 realtime
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 openai
+
+./docker_app_copy/vllm/examples/speech_to_text/realtime:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle 5553 Oct  3 07:45 openai_realtime_microphone_client.py
+-rw-r--r-- 1 hotaisle hotaisle 4772 Oct  3 07:45 openai_realtime_client.py
+
+./docker_app_copy/vllm/examples/speech_to_text/openai:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 2677 Oct  3 07:45 openai_translation_client.py
+-rw-r--r-- 1 hotaisle hotaisle 6625 Oct  3 07:45 openai_transcription_client.py
+
+./docker_app_copy/vllm/examples/scale_out:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 1501 Oct  3 07:45 token_generation_client.py
+-rw-r--r-- 1 hotaisle hotaisle 3911 Oct  3 07:45 example_mm_serve.py
+-rw-r--r-- 1 hotaisle hotaisle    0 Oct  3 07:45 __init__.py
+
+./docker_app_copy/vllm/examples/rl:
+total 124
+-rw-r--r-- 1 hotaisle hotaisle  1526 Oct  3 07:45 skip_loading_weights_in_engine_init.py
+-rw-r--r-- 1 hotaisle hotaisle 12055 Oct  3 07:45 routed_experts_e2e.py
+-rw-r--r-- 1 hotaisle hotaisle  8982 Oct  3 07:45 rlhf_sparse_nccl.py
+-rw-r--r-- 1 hotaisle hotaisle 11071 Oct  3 07:45 rlhf_sharded_rdt_small_ep.py
+-rw-r--r-- 1 hotaisle hotaisle 13565 Oct  3 07:45 rlhf_nccl_fsdp_ep.py
+-rw-r--r-- 1 hotaisle hotaisle  6793 Oct  3 07:45 rlhf_m2n.py
+-rw-r--r-- 1 hotaisle hotaisle 10625 Oct  3 07:45 rlhf_ipc_fsdp_ep.py
+-rw-r--r-- 1 hotaisle hotaisle  6927 Oct  3 07:45 rlhf_http_nccl.py
+-rw-r--r-- 1 hotaisle hotaisle  6507 Oct  3 07:45 rlhf_http_ipc.py
+-rw-r--r-- 1 hotaisle hotaisle 13557 Oct  3 07:45 rlhf_async_new_apis.py
+-rw-r--r-- 1 hotaisle hotaisle  4140 Oct  3 07:45 rdt_weight_source.py
+-rw-r--r-- 1 hotaisle hotaisle  5539 Oct  3 07:45 rdt_vllm_serve.py
+
+./docker_app_copy/vllm/examples/reasoning:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle 1412 Oct  3 07:45 openai_responses_client.py
+-rw-r--r-- 1 hotaisle hotaisle 2445 Oct  3 07:45 openai_chat_completion_with_reasoning_streaming.py
+-rw-r--r-- 1 hotaisle hotaisle 1861 Oct  3 07:45 openai_chat_completion_with_reasoning.py
+-rw-r--r-- 1 hotaisle hotaisle 5395 Oct  3 07:45 openai_chat_completion_tool_calls_with_reasoning.py
+
+./docker_app_copy/vllm/examples/ray_serving:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle 4536 Oct  3 07:45 run_cluster.sh
+-rw-r--r-- 1 hotaisle hotaisle 1816 Oct  3 07:45 ray_serve_deepseek.py
+-rw-r--r-- 1 hotaisle hotaisle 3798 Oct  3 07:45 multi-node-serving.sh
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 elastic_ep
+-rw-r--r-- 1 hotaisle hotaisle 3156 Oct  3 07:45 batch_llm_inference.py
+
+./docker_app_copy/vllm/examples/ray_serving/elastic_ep:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 2119 Oct  3 07:45 serve_deepseek_v2.sh
+-rw-r--r-- 1 hotaisle hotaisle 1531 Oct  3 07:45 scale.py
+-rw-r--r-- 1 hotaisle hotaisle 1439 Oct  3 07:45 bench.sh
+
+./docker_app_copy/vllm/examples/pooling:
+total 28
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 token_embed
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 token_classify
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct  3 07:45 score
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 reward
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 plugin
+drwxr-xr-x 4 hotaisle hotaisle 4096 Oct  3 07:45 embed
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 classify
+
+./docker_app_copy/vllm/examples/pooling/token_embed:
+total 28
+-rw-r--r-- 1 hotaisle hotaisle 2012 Oct  3 07:45 multi_vector_retrieval_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1830 Oct  3 07:45 multi_vector_retrieval_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 2192 Oct  3 07:45 jina_reranker_v3_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1926 Oct  3 07:45 jina_reranker_v3_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 2603 Oct  3 07:45 jina_embeddings_v4_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 7379 Oct  3 07:45 colqwen3_token_embed_online.py
+
+./docker_app_copy/vllm/examples/pooling/token_classify:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle 2101 Oct  3 07:45 ner_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1574 Oct  3 07:45 ner_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 5958 Oct  3 07:45 forced_alignment_online.py
+-rw-r--r-- 1 hotaisle hotaisle 2860 Oct  3 07:45 forced_alignment_offline.py
+
+./docker_app_copy/vllm/examples/pooling/score:
+total 92
+-rw-r--r-- 1 hotaisle hotaisle 4370 Oct  3 07:45 vision_score_api_online.py
+-rw-r--r-- 1 hotaisle hotaisle 6123 Oct  3 07:45 vision_reranker_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 4033 Oct  3 07:45 vision_rerank_api_online.py
+-rw-r--r-- 1 hotaisle hotaisle 3963 Oct  3 07:45 using_template_online.py
+-rw-r--r-- 1 hotaisle hotaisle 6707 Oct  3 07:45 using_template_offline.py
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 template
+-rw-r--r-- 1 hotaisle hotaisle 2344 Oct  3 07:45 score_api_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1056 Oct  3 07:45 rerank_api_online.py
+-rw-r--r-- 1 hotaisle hotaisle 3104 Oct  3 07:45 qwen3_reranker_online.py
+-rw-r--r-- 1 hotaisle hotaisle 4005 Oct  3 07:45 qwen3_reranker_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 7441 Oct  3 07:45 convert_model_to_seq_cls.py
+-rw-r--r-- 1 hotaisle hotaisle 8158 Oct  3 07:45 colqwen3_rerank_online.py
+-rw-r--r-- 1 hotaisle hotaisle 4823 Oct  3 07:45 colqwen3_5_rerank_online.py
+-rw-r--r-- 1 hotaisle hotaisle 5153 Oct  3 07:45 colmodernvbert_rerank_online.py
+-rw-r--r-- 1 hotaisle hotaisle 2671 Oct  3 07:45 colbert_rerank_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1369 Oct  3 07:45 cohere_rerank_client.py
+
+./docker_app_copy/vllm/examples/pooling/score/template:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle 695 Oct  3 07:45 qwen3_vl_reranker.jinja
+-rw-r--r-- 1 hotaisle hotaisle 685 Oct  3 07:45 qwen3_reranker.jinja
+-rw-r--r-- 1 hotaisle hotaisle 601 Oct  3 07:45 nemotron-vl-rerank.jinja
+-rw-r--r-- 1 hotaisle hotaisle 161 Oct  3 07:45 nemotron-rerank.jinja
+-rw-r--r-- 1 hotaisle hotaisle 575 Oct  3 07:45 mxbai_rerank_v2.jinja
+-rw-r--r-- 1 hotaisle hotaisle 292 Oct  3 07:45 bge-reranker-v2-gemma.jinja
+
+./docker_app_copy/vllm/examples/pooling/reward:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle 2043 Oct  3 07:45 token_reward_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1797 Oct  3 07:45 token_reward_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 2032 Oct  3 07:45 sequence_reward_online.py
+-rw-r--r-- 1 hotaisle hotaisle 1862 Oct  3 07:45 sequence_reward_offline.py
+
+./docker_app_copy/vllm/examples/pooling/plugin:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle  1677 Oct  3 07:45 prithvi_geospatial_mae_online.py
+-rw-r--r-- 1 hotaisle hotaisle 12143 Oct  3 07:45 prithvi_geospatial_mae_offline.py
+-rw-r--r-- 1 hotaisle hotaisle  1771 Oct  3 07:45 prithvi_geospatial_mae_io_processor.py
+
+./docker_app_copy/vllm/examples/pooling/embed:
+total 56
+-rw-r--r-- 1 hotaisle hotaisle 11385 Oct  3 07:45 vision_embedding_online.py
+-rw-r--r-- 1 hotaisle hotaisle 10750 Oct  3 07:45 vision_embedding_offline.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 template
+-rw-r--r-- 1 hotaisle hotaisle   992 Oct  3 07:45 openai_embedding_matryoshka_fy_client.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 openai_embedding_long_text
+-rw-r--r-- 1 hotaisle hotaisle  1046 Oct  3 07:45 openai_embedding_client.py
+-rw-r--r-- 1 hotaisle hotaisle  3505 Oct  3 07:45 embedding_requests_bytes_online.py
+-rw-r--r-- 1 hotaisle hotaisle  2132 Oct  3 07:45 embedding_requests_base64_online.py
+-rw-r--r-- 1 hotaisle hotaisle  1640 Oct  3 07:45 embed_matryoshka_fy_offline.py
+-rw-r--r-- 1 hotaisle hotaisle  1785 Oct  3 07:45 embed_jina_embeddings_v3_offline.py
+
+./docker_app_copy/vllm/examples/pooling/embed/template:
+total 16
+-rw-r--r-- 1 hotaisle hotaisle  561 Oct  3 07:45 vlm2vec_qwen2vl.jinja
+-rw-r--r-- 1 hotaisle hotaisle  676 Oct  3 07:45 vlm2vec_phi3v.jinja
+-rw-r--r-- 1 hotaisle hotaisle  823 Oct  3 07:45 nemotron_embed_vl.jinja
+-rw-r--r-- 1 hotaisle hotaisle 1135 Oct  3 07:45 dse_qwen2_vl.jinja
+
+./docker_app_copy/vllm/examples/pooling/embed/openai_embedding_long_text:
+total 32
+-rw-r--r-- 1 hotaisle hotaisle  4918 Oct  3 07:45 service.sh
+-rw-r--r-- 1 hotaisle hotaisle 13137 Oct  3 07:45 client.py
+-rw-r--r-- 1 hotaisle hotaisle  6545 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/pooling/classify:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 3299 Oct  3 07:45 vision_classification_online.py
+-rw-r--r-- 1 hotaisle hotaisle  896 Oct  3 07:45 classification_with_lora_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 1846 Oct  3 07:45 classification_online.py
+
+./docker_app_copy/vllm/examples/observability:
+total 16
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 prometheus_grafana
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 opentelemetry
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 metrics
+drwxr-xr-x 4 hotaisle hotaisle 4096 Oct  3 07:45 dashboards
+
+./docker_app_copy/vllm/examples/observability/prometheus_grafana:
+total 60
+-rw-r--r-- 1 hotaisle hotaisle   188 Oct  3 07:45 prometheus.yaml
+-rw-r--r-- 1 hotaisle hotaisle 46655 Oct  3 07:45 grafana.json
+-rw-r--r-- 1 hotaisle hotaisle   547 Oct  3 07:45 docker-compose.yaml
+-rw-r--r-- 1 hotaisle hotaisle  2342 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/observability/opentelemetry:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 1317 Oct  3 07:45 dummy_client.py
+-rw-r--r-- 1 hotaisle hotaisle 3137 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/observability/metrics:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 1623 Oct  3 07:45 offline.py
+
+./docker_app_copy/vllm/examples/observability/dashboards:
+total 12
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 perses
+drwxr-xr-x 2 hotaisle hotaisle 4096 Oct  3 07:45 grafana
+-rw-r--r-- 1 hotaisle hotaisle 2338 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/observability/dashboards/perses:
+total 44
+-rw-r--r-- 1 hotaisle hotaisle 15610 Oct  3 07:45 query_statistics.yaml
+-rw-r--r-- 1 hotaisle hotaisle 23292 Oct  3 07:45 performance_statistics.yaml
+-rw-r--r-- 1 hotaisle hotaisle  1333 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/observability/dashboards/grafana:
+total 68
+-rw-r--r-- 1 hotaisle hotaisle 24773 Oct  3 07:45 query_statistics.json
+-rw-r--r-- 1 hotaisle hotaisle 35464 Oct  3 07:45 performance_statistics.json
+-rw-r--r-- 1 hotaisle hotaisle  1790 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/generate:
+total 24
+-rw-r--r-- 1 hotaisle hotaisle 6770 Oct  3 07:45 batched_chat_completions_online.py
+-rw-r--r-- 1 hotaisle hotaisle 6776 Oct  3 07:45 trace_replay_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 2010 Oct  3 07:45 qwen_1m_offline.py
+drwxr-xr-x 4 hotaisle hotaisle 4096 Oct  3 07:45 multimodal
+
+./docker_app_copy/vllm/examples/generate/multimodal:
+total 188
+-rw-r--r-- 1 hotaisle hotaisle 78342 Oct  3 07:45 vision_language_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 46933 Oct  3 07:45 vision_language_multi_image_offline.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 qwen3_omni
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 qwen2_5_omni
+-rw-r--r-- 1 hotaisle hotaisle 14093 Oct  3 07:45 openai_chat_completion_client_for_multimodal.py
+-rw-r--r-- 1 hotaisle hotaisle  5874 Oct  3 07:45 mistral-small_offline.py
+-rw-r--r-- 1 hotaisle hotaisle  4743 Oct  3 07:45 encoder_decoder_multimodal_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 20054 Oct  3 07:45 audio_language_offline.py
+
+./docker_app_copy/vllm/examples/generate/multimodal/qwen3_omni:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 6713 Oct  3 07:45 only_thinker.py
+
+./docker_app_copy/vllm/examples/generate/multimodal/qwen2_5_omni:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 5884 Oct  3 07:45 only_thinker.py
+-rw-r--r-- 1 hotaisle hotaisle 1083 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/features:
+total 96
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 torchrun
+-rw-r--r-- 1 hotaisle hotaisle 13297 Oct  3 07:45 tensorize_vllm_model.py
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 structured_outputs
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 speculative_decoding
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 sharded_state
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 reset_kv
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 prompt_embed
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 profiling
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 pause_resume
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 openai_batch
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 lora
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 kv_events
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 data_parallel
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 context_extension
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 batch_invariance
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 automatic_prefix_caching
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 structured_diffusion
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct  3 07:45 logits_processor
+-rw-r--r-- 1 hotaisle hotaisle  8578 Oct  3 07:45 logging_configuration.md
+
+./docker_app_copy/vllm/examples/features/torchrun:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 2498 Oct  3 07:45 torchrun_example_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 4267 Oct  3 07:45 torchrun_dp_example_offline.py
+
+./docker_app_copy/vllm/examples/features/structured_outputs:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle 3466 Oct  3 07:45 structured_outputs_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 7747 Oct  3 07:45 structured_outputs_client.py
+-rw-r--r-- 1 hotaisle hotaisle  226 Oct  3 07:45 pyproject.toml
+-rw-r--r-- 1 hotaisle hotaisle 1489 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/features/speculative_decoding:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle 10835 Oct  3 07:45 spec_decode_offline.py
+-rw-r--r-- 1 hotaisle hotaisle  2152 Oct  3 07:45 mlpspeculator_offline.py
+-rw-r--r-- 1 hotaisle hotaisle  3117 Oct  3 07:45 extract_hidden_states_offline.py
+
+./docker_app_copy/vllm/examples/features/sharded_state:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 2574 Oct  3 07:45 save_sharded_state_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 2576 Oct  3 07:45 load_sharded_state_offline.py
+
+./docker_app_copy/vllm/examples/features/reset_kv:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 3035 Oct  3 07:45 reset_kv_offline.py
+
+./docker_app_copy/vllm/examples/features/prompt_embed:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 2973 Oct  3 07:45 prompt_embed_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 5198 Oct  3 07:45 prompt_embed_inference_with_openai_client.py
+
+./docker_app_copy/vllm/examples/features/profiling:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 1356 Oct  3 07:45 simple_profiling_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 3378 Oct  3 07:45 run_one_batch_offline.py
+
+./docker_app_copy/vllm/examples/features/pause_resume:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 3729 Oct  3 07:45 pause_resume_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 4058 Oct  3 07:45 data_parallel_pause_resume.py
+
+./docker_app_copy/vllm/examples/features/openai_batch:
+total 20
+-rw-r--r-- 1 hotaisle hotaisle   573 Oct  3 07:45 openai_example_batch.jsonl
+-rw-r--r-- 1 hotaisle hotaisle 13441 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/features/lora:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 4036 Oct  3 07:45 multilora_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 4116 Oct  3 07:45 lora_with_quantization_offline.py
+
+./docker_app_copy/vllm/examples/features/kv_events:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 3960 Oct  3 07:45 kv_events_subscriber.py
+
+./docker_app_copy/vllm/examples/features/data_parallel:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 2708 Oct  3 07:45 multi_instance_data_parallel.py
+-rw-r--r-- 1 hotaisle hotaisle 6513 Oct  3 07:45 data_parallel_offline.py
+
+./docker_app_copy/vllm/examples/features/context_extension:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 1948 Oct  3 07:45 context_extension_offline.py
+
+./docker_app_copy/vllm/examples/features/batch_invariance:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 1338 Oct  3 07:45 reproducibility_offline.py
+
+./docker_app_copy/vllm/examples/features/automatic_prefix_caching:
+total 12
+-rw-r--r-- 1 hotaisle hotaisle 3383 Oct  3 07:45 prefix_caching_offline.py
+-rw-r--r-- 1 hotaisle hotaisle 6566 Oct  3 07:45 automatic_prefix_caching_offline.py
+
+./docker_app_copy/vllm/examples/features/structured_diffusion:
+total 64
+-rw-r--r-- 1 hotaisle hotaisle 56556 Oct  3 07:45 structured_server.py
+-rw-r--r-- 1 hotaisle hotaisle  4402 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/examples/features/logits_processor:
+total 28
+-rw-r--r-- 1 hotaisle hotaisle 6004 Oct  3 07:45 custom_req_init.py
+-rw-r--r-- 1 hotaisle hotaisle 5461 Oct  3 07:45 custom_req.py
+-rw-r--r-- 1 hotaisle hotaisle 4944 Oct  3 07:45 custom.py
+-rw-r--r-- 1 hotaisle hotaisle 2120 Oct  3 07:45 README.md
+
+./docker_app_copy/vllm/docker:
+total 188
+-rw-r--r-- 1 hotaisle hotaisle  3408 Oct  3 07:45 docker-bake.hcl
+-rw-r--r-- 1 hotaisle hotaisle  4538 Oct  3 07:45 docker-bake-rocm.hcl
+-rw-r--r-- 1 hotaisle hotaisle 17392 Oct  3 07:45 ci-rocm.hcl
+-rw-r--r-- 1 hotaisle hotaisle 20518 Oct  3 07:45 Dockerfile.rocm_base
+-rw-r--r-- 1 hotaisle hotaisle 44409 Oct  3 07:45 Dockerfile.rocm
+-rw-r--r-- 1 hotaisle hotaisle 20196 Oct  3 07:45 Dockerfile.cpu
+-rw-r--r-- 1 hotaisle hotaisle 66248 Oct  3 07:45 Dockerfile
+
+./docker_app_copy/graphs:
+total 8
+-rw-r--r-- 1 hotaisle hotaisle 1443 Oct 18 10:17 qwen3_layer0_mlp_dfg.json
+-rw-r--r-- 1 hotaisle hotaisle  999 Oct 18 10:17 qwen3_layer0_mlp_dfg.dot
+
+./results:
+total 204
+-rw-r--r-- 1 root     root      5170 Oct 19 04:52 bench_serving_no_sys_trace_20261019_045123.json
+-rw-r--r-- 1 root     root      5102 Oct 19 04:52 bench_serving_no_sys_trace_20261019_045123.log
+-rw-rw-r-- 1 hotaisle hotaisle  2828 Oct 19 04:52 amd_smi_monitor_no_sys_trace_20261019_045121.csv
+-rw-r--r-- 1 root     root      2266 Oct 19 04:56 prefill_short_no_sys_trace_20261019_045603.json
+-rw-r--r-- 1 root     root      2218 Oct 19 04:56 prefill_medium_no_sys_trace_20261019_045616.json
+-rw-r--r-- 1 root     root      2204 Oct 19 04:57 prefill_long_no_sys_trace_20261019_045632.json
+-rw-r--r-- 1 root     root      7482 Oct 19 04:57 prefill_large_batch_no_sys_trace_20261019_045727.json
+-rw-rw-r-- 1 hotaisle hotaisle  9743 Oct 19 04:58 amd_smi_monitor_no_sys_trace_20261019_045551.csv
+-rw-r--r-- 1 root     root     41897 Oct 19 04:59 vllm_server.log
+-rw-r--r-- 1 root     root      5178 Oct 19 06:30 bench_serving_sys_trace_20261019_062949.json
+-rw-r--r-- 1 root     root      5113 Oct 19 06:30 bench_serving_sys_trace_20261019_062949.log
+-rw-rw-r-- 1 hotaisle hotaisle  2880 Oct 19 06:30 amd_smi_monitor_sys_trace_20261019_062946.csv
+drwxr-xr-x 4 root     root      4096 Oct 19 06:32 qwen3_sys_trace
+-rw-r--r-- 1 root     root      2265 Oct 19 06:49 prefill_short_sys_trace_20261019_064940.json
+-rw-r--r-- 1 root     root      2215 Oct 19 06:50 prefill_medium_sys_trace_20261019_064953.json
+-rw-r--r-- 1 root     root      2203 Oct 19 06:51 prefill_long_sys_trace_20261019_065010.json
+-rw-r--r-- 1 root     root      7484 Oct 19 06:51 prefill_large_batch_sys_trace_20261019_065106.json
+-rw-rw-r-- 1 hotaisle hotaisle  7465 Oct 19 06:51 amd_smi_monitor_sys_trace_20261019_064931.csv
+-rw-r--r-- 1 root     root     46874 Oct 19 06:52 vllm_rocprof_server.log
+
+./results/qwen3_sys_trace:
+total 8
+drwxr-xr-x 4 root root 4096 Oct 19 06:26 20261019_062646
+drwxr-xr-x 4 root root 4096 Oct 19 06:32 20261019_063240
+
+./results/qwen3_sys_trace/20261019_062646:
+total 12
+drwxr-xr-x 2 root root 4096 Oct 19 06:26 converted
+-rw-r--r-- 1 root root   39 Oct 19 06:26 conversion.log
+drwxr-xr-x 3 root root 4096 Oct 19 06:31 raw
+
+./results/qwen3_sys_trace/20261019_062646/converted:
+total 0
+
+./results/qwen3_sys_trace/20261019_062646/raw:
+total 4
+drwxr-xr-x 2 root root 4096 Oct 19 06:31 cdd1775e4cd0
+
+./results/qwen3_sys_trace/20261019_062646/raw/cdd1775e4cd0:
+total 415612
+-rw-r--r-- 1 root root     30208 Oct 19 06:31 12211_results.db-journal
+-rw-r--r-- 1 root root 425570304 Oct 19 06:31 12211_results.db
+
+./results/qwen3_sys_trace/20261019_063240:
+total 12
+drwxr-xr-x 2 root root 4096 Oct 19 06:32 converted
+-rw-r--r-- 1 root root   39 Oct 19 06:32 conversion.log
+drwxr-xr-x 3 root root 4096 Oct 19 06:51 raw
+
+./results/qwen3_sys_trace/20261019_063240/converted:
+total 0
+
+./results/qwen3_sys_trace/20261019_063240/raw:
+total 4
+drwxr-xr-x 2 root root 4096 Oct 19 06:52 cdd1775e4cd0
+
+./results/qwen3_sys_trace/20261019_063240/raw/cdd1775e4cd0:
+total 2291416
+-rw-r--r-- 1 root root 2346409984 Oct 19 06:52 13292_results.db
