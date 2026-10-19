@@ -109,6 +109,28 @@ docker exec mi300x-qwen3-profile \
     tail -100 /workspace/kit/results/vllm_server.log
 ```
 
+TO USE THIS TEXT!!!
+02_serve_qwen3_32b_sys_trace.sh
+        ↓
+vLLM READY
+        ↓
+03 or 04 benchmark
+        ↓
+kill ONLY actual vLLM Python process:
+pkill -TERM -f '^/usr/bin/python /usr/local/bin/vllm serve '
+        ↓
+rocprofv3 finalizes
+        ↓
+detached bash survives
+        ↓
+rocpd2csv
+        ↓
+rocpd2pftrace
+
+
+
+
+
 Now vllm serve is running. Perform:
 ```
    |
@@ -268,9 +290,10 @@ on startup is less than desired GPU memory utilization
 ```
 when running vllm serve then solve it as follows (check GPU VRAM state):
 ```
-rocm-smi --showpids; rocm-smi --showmeminfo vram
+./check_gpu_vram
 ```
-and
+Make sure that used VRAM size is less than 30MiB.
+Also run
 ```
 docker exec mi300x-qwen3-profile \
   bash -lc "ps -eo pid,ppid,stat,cmd | grep -E '[v]llm|[p]ython|[r]ocprof' || true"
