@@ -157,6 +157,13 @@ vllm_server.log is updated all the time. \
 03_bench_serving.sh and 04_bench_prefill.sh should not run at the same time but serially. \
 To kill vllm serve between 03_bench_serving.sh and 04_bench_prefill.sh runs check if vllm serve runs:
 ```
+use: 
+```
+./change_names.sh <string1> <exclude_string> [target_directory]
+```
+
+
+```
 docker exec mi300x-qwen3-profile \
   bash -lc "ps -eo pid,ppid,stat,cmd | grep -E '[v]llm|[p]ython|[r]ocprof' || true"
 ```
