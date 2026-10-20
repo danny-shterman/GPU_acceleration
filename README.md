@@ -109,7 +109,7 @@ docker exec mi300x-qwen3-profile \
     tail -100 /workspace/kit/results/vllm_server.log
 ```
 
-** To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with trace use:**
+__ To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with trace use:__
 ```
 Verify GPU free (use rocm-smi --showpids; rocm-smi --showmeminfo vram)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
