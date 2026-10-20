@@ -109,7 +109,7 @@ docker exec mi300x-qwen3-profile \
     tail -100 /workspace/kit/results/vllm_server.log
 ```
 
-__ To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with trace use:__
+**To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with trace use:**
 ```
 Verify GPU free (use rocm-smi --showpids; rocm-smi --showmeminfo vram)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
@@ -126,11 +126,11 @@ Find exact vLLM PID and send SIGINT only to that vLLM PID (use kill_vllm_serve_o
 Do not kill rocprofv3, workers, or the wrapper
 Let ROCPD finalization and CSV/PFTrace conversion complete (use check_csv_pftrace_files.sh and are_rocpd_csv_pftrace_completed_successfully.sh)
 ```
-** Note that when switch between 03_bench_serving.sh and 04_bench_prefill.sh there is a need to execute**
-**   all the process again except removing files from ./results/qwen3_sys_trace directory.**
+**Note that when switch between 03_bench_serving.sh and 04_bench_prefill.sh there is a need to execute**
+**all the process again except removing files from ./results/qwen3_sys_trace directory.**
 
 and
-** To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with no trace use:**
+**To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with no trace use:**
 ```
 Verify GPU free (use rocm-smi --showpids; rocm-smi --showmeminfo vram)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
@@ -146,7 +146,7 @@ Stop 05_monitor_amd_smi.sh with Ctrl-C
 Find exact vLLM PID and send SIGINT only to that vLLM PID (use kill_vllm_serve_only_by_signint.sh)
 ```
 **Note that when switch between 03_bench_serving.sh and 04_bench_prefill.sh there is a need to execute**
-**   all the process again except removing files from ./results/qwen3_sys_trace directory.**
+**all the process again except removing files from ./results/qwen3_sys_trace directory.**
 
 **Finally use kill_docker_zombie_table_entries.sh to kill all the zombie files**
 ```
