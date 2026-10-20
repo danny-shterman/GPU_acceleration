@@ -166,13 +166,12 @@ and
 05_monitor_amd_smi.sh generates amd_smi_monitor_<timestamp>.csv foe both scripts. \
 vllm_server.log is updated all the time. \
 03_bench_serving.sh and 04_bench_prefill.sh should not run at the same time but serially. \
-To kill vllm serve between 03_bench_serving.sh and 04_bench_prefill.sh runs use:
+To kill vllm serve between 03_bench_serving.sh and 04_bench_prefill.sh runs check if vllm serve runs:
 ```
 docker exec mi300x-qwen3-profile \
   bash -lc "ps -eo pid,ppid,stat,cmd | grep -E '[v]llm|[p]ython|[r]ocprof' || true"
 ```
-To check if vllm runs.
-If runs then use:
+Then if runs then use:
 ```
 docker exec mi300x-qwen3-profile \
   bash -lc "
