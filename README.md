@@ -125,7 +125,7 @@ Let 05_monitor_amd_smi.sh record ~5 seconds more.
 Stop 05_monitor_amd_smi.sh with Ctrl-C
 Find exact vLLM PID and send SIGINT only to that vLLM PID (use kill_vllm_serve_only_by_signint.sh)
 Do not kill rocprofv3, workers, or the wrapper
-Let ROCPD finalization and CSV/PFTrace conversion complete (use check_csv_pftrace_files.sh and are_rocpd_csv_pftrace_completed_successfully.sh)
+Let ROCPD finalization and CSV/PFTrace conversion complete (use check_csv_pftrace_files.sh; are_rocpd_csv_pftrace_completed_successfully.sh)
 ```
 **Note that when switch between 03_bench_serving.sh and 04_bench_prefill.sh there is a need to execute**
 **all the process again except removing files from ./results/qwen3_sys_trace directory.**
