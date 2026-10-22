@@ -81,3 +81,4 @@ run_case large_batch 16 64
 echo
 echo "All prefill benchmark cases completed."
 
+sleep 5 # to give enough time to 05_monitor_amd_smi.sh to complete its task.

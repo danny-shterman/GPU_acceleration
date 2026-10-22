@@ -181,3 +181,4 @@ echo
 echo "To inspect the JSON result:"
 echo "  docker exec ${CONTAINER_NAME} cat ${RESULT_JSON}"
 
+sleep 5 # to give enough time to 05_monitor_amd_smi.sh to complete its task.
