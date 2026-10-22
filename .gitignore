@@ -1,3 +1,4 @@
 .rocprofv3/
 mi300x_qwen3_profile_kit/results/
 mi300x_qwen3_profile_kit/env/
+mi300x_qwen3_profile_kit/rocpd*
