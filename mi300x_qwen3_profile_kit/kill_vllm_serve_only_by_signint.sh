@@ -17,6 +17,7 @@ while true; do
 
     # Query active vLLM process IDs inside the container
     vllm_pids=$(docker exec -u 0 "$CONTAINER_NAME" pgrep -f 'vllm' 2>/dev/null || true)
+    echo "Active vLLM processes: $vllm_pids"
 
     # If no PIDs are found, vllm serve is fully dead
     if [ -z "$vllm_pids" ]; then
