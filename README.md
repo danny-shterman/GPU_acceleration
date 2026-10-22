@@ -111,7 +111,7 @@ docker exec mi300x-qwen3-profile \
 
 **To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with trace use:**
 ```
-Verify GPU free (use rocm-smi --showpids)
+Verify GPU free (use rocm-smi; rocm-smi --showpids)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
 Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
 Remove old files from ./results/qwen3_sys_trace directory
@@ -132,7 +132,7 @@ Let ROCPD finalization and CSV/PFTrace conversion complete (use check_csv_pftrac
 and
 **To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with no trace use:**
 ```
-Verify GPU free (use rocm-smi --showpids)
+Verify GPU free (use rocm-smi; rocm-smi --showpids)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
 Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
 Remove old files from ./results/qwen3_sys_trace directory
