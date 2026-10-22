@@ -114,8 +114,8 @@ docker exec mi300x-qwen3-profile \
 **To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with trace use:**
 ```
 Verify GPU free (use rocm-smi; rocm-smi --showpids)
-Verify GPU VRAM is available (use check_gpu_vram.sh. Use release_vram_memory.sh if VRAM Total Used Memory
-    is more than 30MiB).
+Verify GPU VRAM is available (use check_gpu_vram.sh. Use ./release_vram_and_check_processes.sh if VRAM
+    Total Used Memory is more than 30MiB).
 Check if docker container is running (use check_if_container_is_running.sh. Run 01_start_container.sh
     if is not running).
 Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
@@ -139,8 +139,8 @@ and
 **To run benchmark (./03_bench_serving.sh) and prefill (./04_bench_prefill.sh) with no trace use:**
 ```
 Verify GPU free (use rocm-smi; rocm-smi --showpids)
-Verify GPU VRAM is available (use check_gpu_vram.sh. Use release_vram_memory.sh if VRAM Total Used Memory
-    is more than 30MiB).
+Verify GPU VRAM is available (use check_gpu_vram.sh. Use ./release_vram_and_check_processes.sh if VRAM
+    Total Used Memory is more than 30MiB).
 Check if docker container is running (use check_if_container_is_running.sh. Run 01_start_container.sh
     if is not running).
 Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
