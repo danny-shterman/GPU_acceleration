@@ -113,6 +113,7 @@ docker exec mi300x-qwen3-profile \
 ```
 Verify GPU free (use rocm-smi; rocm-smi --showpids)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
+Check if docker container is running (use check_if_container_is_running.sh)
 Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
 Remove old files from ./results/qwen3_sys_trace directory
 Start 02_serve_qwen3_32b_sys_trace.sh in terminal 1
@@ -134,6 +135,7 @@ and
 ```
 Verify GPU free (use rocm-smi; rocm-smi --showpids)
 Verify GPU VRAM is available (use check_gpu_vram.sh)
+Check if docker container is running (use check_if_container_is_running.sh)
 Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
 Remove old files from ./results/qwen3_sys_trace directory
 Start 02_serve_qwen3_32b.sh in terminal 1
