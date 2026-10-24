@@ -122,7 +122,7 @@ Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
 Remove old files from ./results/qwen3_sys_trace directory
 Start 02_serve_qwen3_32b_sys_trace.sh in terminal 1
 Wait for READY
-Start 05_monitor_amd_smi.sh in another terminal in terminal 2
+Start 05_monitor_amd_smi.sh in terminal 2
 Run 03_bench_serving.sh or 04_bench_prefill.sh, not both simultaneously in terminal 3
 Benchmark or prefill finishes
 Let 05_monitor_amd_smi.sh record ~5 seconds more.
@@ -147,7 +147,7 @@ Verify vllm serve is not running (use check_if_vllm_serve_runs.sh)
 Remove old files from ./results/qwen3_sys_trace directory
 Start 02_serve_qwen3_32b.sh in terminal 1
 Wait for READY
-Start 05_monitor_amd_smi.sh in another terminal in terminal 2
+Start 05_monitor_amd_smi.sh in terminal 2
 Run 03_bench_serving.sh or 04_bench_prefill.sh, not both simultaneously in terminal 3
 Benchmark or prefill finishes
 Let 05_monitor_amd_smi.sh record ~5 seconds more.
