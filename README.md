@@ -269,6 +269,28 @@ This measures approximately:
     dependent, cache-missing GPU global-memory load-to-use latency
 through the real MI300X memory hierarchy.
 
+To check HBM bandwidth use:
+
+bash 06b_build_and_run_hbm_bandwidth.sh
+
+The build command is:
+
+hipcc -O3 --offload-arch=gfx942 hbm_bandwidth.hip -o hbm_bandwidth
+
+Then perform repeated measurements using, for example, a 1-GiB buffer:
+
+for i in $(seq 1 10); do
+    ./hbm_bandwidth 1 10
+done
+
+The first argument is the buffer size in GiB, not bytes. For example:
+
+./hbm_bandwidth 1 10    # 1 GiB per buffer
+./hbm_bandwidth 4 10    # 4 GiB per buffer
+./hbm_bandwidth 8 10    # 8 GiB per buffer
+
+The second argument is the number of measurement repetitions.
+
 To generate a simplified DFG of Qwen-style transformer block run from inside the docker:
 ```
 python3 /workspace/kit/08_static_dfg.py
