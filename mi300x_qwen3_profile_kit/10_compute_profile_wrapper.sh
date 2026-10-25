@@ -13,6 +13,14 @@ fi
 
 NAME="${PROFILE_NAME:-mi300x_$(date +%Y%m%d_%H%M%S)}"
 
+WORKLOAD_DIR="workloads/${NAME}"
+
+if [[ -e "$WORKLOAD_DIR" ]]; then
+    echo "ERROR: Workload already exists: $WORKLOAD_DIR"
+    echo "Use a different PROFILE_NAME or remove the old directory."
+    exit 1
+fi
+
 echo "Installed metric sets:"
 rocprof-compute profile --list-sets || true
 
@@ -23,8 +31,6 @@ echo "NOTE: counter profiling may replay/serialize the workload."
 rocprof-compute profile \
     --name "$NAME" \
     --no-roof \
+    --format-rocprof-output rocpd \
     -- "$@"
 
-echo
-echo "Analyze the generated workload directory with:"
-echo "  rocprof-compute analyze -p workloads/${NAME}/MI300X/"
