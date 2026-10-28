@@ -1,0 +1,9 @@
+Metric,Avg,Min,Max,Unit
+FLOPs (Total),N/A,N/A,N/A,Ops per kernel
+IOPs (Total),N/A,N/A,N/A,Ops per kernel
+F8 OPs,N/A,N/A,N/A,Ops per kernel
+F16 OPs,N/A,N/A,N/A,Ops per kernel
+BF16 OPs,N/A,N/A,N/A,Ops per kernel
+F32 OPs,N/A,N/A,N/A,Ops per kernel
+F64 OPs,N/A,N/A,N/A,Ops per kernel
+INT8 OPs,N/A,N/A,N/A,Ops per kernel

@@ -1,0 +1,38 @@
+vLLM version: 0.32.0
+vLLM package: /usr/local/lib/python3.12/dist-packages/vllm/__init__.py
+----- Installed package versions -----
+Name: vllm
+Version: 0.32.0+rocm723
+Summary: A high-throughput and memory-efficient inference and serving engine for LLMs
+Home-page: https://github.com/vllm-project/vllm
+Author: vLLM Team
+Author-email: 
+License-Expression: Apache-2.0
+Location: /usr/local/lib/python3.12/dist-packages
+Requires: aiohttp, amd-quark, anthropic, apache-tvm-ffi, blake3, cachetools, cbor2, cloudpickle, compressed-tensors, conch-triton-kernels, datasets, depyf, einops, fastapi, fastsafetensors, filelock, grpcio, grpcio-reflection, huggingface_hub, ijson, jsonschema, lark, llguidance, lm-format-enforcer, mcp, mistral_common, model-hosting-container-standards, mooncake-transfer-engine-rocm, msgspec, ninja, numba, numpy, openai, opencv-python-headless, opentelemetry-api, opentelemetry-exporter-otlp, opentelemetry-sdk, opentelemetry-semantic-conventions-ai, oss-harmony, outlines_core, packaging, partial-json-parser, peft, pillow, prometheus-fastapi-instrumentator, prometheus_client, protobuf, psutil, py-cpuinfo, pybase64, pydantic, pytest-asyncio, python-json-logger, pyyaml, pyzmq, regex, requests, runai-model-streamer, safetensors, sentencepiece, setproctitle, setuptools, setuptools-rust, setuptools-scm, six, starlette, tensorizer, tiktoken, tilelang, timm, tokenizers, tqdm, transformers, typing_extensions, watchfiles, xgrammar
+Required-by: 
+---
+Name: torch
+Version: 2.13.0+git733fca1
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org
+Author: 
+Author-email: PyTorch Team <packages@pytorch.org>
+License-Expression: Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT
+Location: /usr/local/lib/python3.12/dist-packages
+Requires: filelock, fsspec, jinja2, networkx, setuptools, sympy, typing-extensions
+Required-by: accelerate, compressed-tensors, flash_attn, lmcache, nixl-rocm, peft, runai-model-streamer, tensorizer, tilelang, timm, torch_c_dlpack_ext, torchvision, xgrammar
+---
+Name: triton
+Version: 3.8.0+git669b31ac
+Summary: A language and compiler for custom Deep Learning operations
+Home-page: https://github.com/triton-lang/triton/
+Author: Philippe Tillet
+Author-email: phil@openai.com
+License: MIT
+Location: /usr/local/lib/python3.12/dist-packages
+Requires: 
+Required-by: xgrammar
+----- Model configuration -----
+----- Backend environment -----
+AITER_ROCM_ARCH=gfx942;gfx950

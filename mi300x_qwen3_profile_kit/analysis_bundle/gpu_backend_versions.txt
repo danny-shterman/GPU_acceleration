@@ -1,0 +1,12 @@
+[aiter] import [module_aiter_core] under /usr/local/lib/python3.12/dist-packages/aiter/jit/module_aiter_core.so
+vllm 0.32.0 /usr/local/lib/python3.12/dist-packages/vllm/__init__.py
+torch 2.13.0+git733fca1 /usr/local/lib/python3.12/dist-packages/torch/__init__.py
+triton 3.8.0 /usr/local/lib/python3.12/dist-packages/triton/__init__.py
+aiter unknown /usr/local/lib/python3.12/dist-packages/aiter/__init__.py
+----- Libraries -----
+	librocblas.so.5 (libc6,x86-64) => /opt/rocm-7.2.3/lib/librocblas.so.5
+	librocblas.so (libc6,x86-64) => /opt/rocm-7.2.3/lib/librocblas.so
+	libhipblaslt.so.1 (libc6,x86-64) => /opt/rocm-7.2.3/lib/libhipblaslt.so.1
+	libhipblaslt.so (libc6,x86-64) => /opt/rocm-7.2.3/lib/libhipblaslt.so
+	libamdhip64.so.7 (libc6,x86-64) => /opt/rocm-7.2.3/lib/libamdhip64.so.7
+	libamdhip64.so (libc6,x86-64) => /opt/rocm-7.2.3/lib/libamdhip64.so

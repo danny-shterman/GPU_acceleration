@@ -1,0 +1,7 @@
+Metric,Avg,Unit
+Utilization,81.07,Pct
+Peak Bandwidth,N/A,Pct
+Hit Rate,N/A,Pct
+L2-Fabric Read BW,N/A,Gb/s
+L2-Fabric Write and Atomic BW,N/A,Gb/s
+HBM Bandwidth,8601.6,Gb/s

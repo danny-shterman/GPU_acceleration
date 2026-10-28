@@ -1,0 +1,13 @@
+Metric,Avg,Min,Max,Unit
+Read (32B),N/A,N/A,N/A,Req per kernel
+Read (64B),N/A,N/A,N/A,Req per kernel
+Read (128B),N/A,N/A,N/A,Req per kernel
+Read (Uncached),N/A,N/A,N/A,Req per kernel
+HBM Read,N/A,N/A,N/A,Req per kernel
+Remote Read,N/A,N/A,N/A,Req per kernel
+Write and Atomic (32B),N/A,N/A,N/A,Req per kernel
+Write and Atomic (Uncached),N/A,N/A,N/A,Req per kernel
+Write and Atomic (64B),N/A,N/A,N/A,Req per kernel
+HBM Write and Atomic,N/A,N/A,N/A,Req per kernel
+Remote Write and Atomic,N/A,N/A,N/A,Req per kernel
+Atomic,N/A,N/A,N/A,Req per kernel

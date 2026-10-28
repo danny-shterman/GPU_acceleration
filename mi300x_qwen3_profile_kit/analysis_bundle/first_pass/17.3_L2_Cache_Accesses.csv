@@ -1,0 +1,20 @@
+Metric,Avg,Min,Max,Unit
+Bandwidth,N/A,N/A,N/A,Gbps
+Req,N/A,N/A,N/A,Req per kernel
+Read Req,N/A,N/A,N/A,Req per kernel
+Write Req,N/A,N/A,N/A,Req per kernel
+Atomic Req,N/A,N/A,N/A,Req per kernel
+Streaming Req,N/A,N/A,N/A,Req per kernel
+Probe Req,N/A,N/A,N/A,Req per kernel
+Cache Hit,N/A,N/A,N/A,Pct
+Hits,N/A,N/A,N/A,Hits per kernel
+Misses,N/A,N/A,N/A,Misses per kernel
+Writeback,N/A,N/A,N/A,Cachelines per kernel
+Writeback (Internal),N/A,N/A,N/A,Cachelines per kernel
+Writeback (vL1D Req),N/A,N/A,N/A,Cachelines per kernel
+Evict (Internal),N/A,N/A,N/A,Cachelines per kernel
+Evict (vL1D Req),N/A,N/A,N/A,Cachelines per kernel
+NC Req,N/A,N/A,N/A,Req per kernel
+UC Req,N/A,N/A,N/A,Req per kernel
+CC Req,N/A,N/A,N/A,Req per kernel
+RW Req,N/A,N/A,N/A,Req per kernel

@@ -1,0 +1,6 @@
+Metric,Avg,Min,Max,Unit
+Req,N/A,N/A,N/A,Req per kernel
+Hit Ratio,N/A,N/A,N/A,Pct
+Hits,N/A,N/A,N/A,Req per kernel
+Translation Misses,N/A,N/A,N/A,Req per kernel
+Permission Misses,N/A,N/A,N/A,Req per kernel

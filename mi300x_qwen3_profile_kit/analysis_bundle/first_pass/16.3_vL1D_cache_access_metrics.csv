@@ -1,0 +1,14 @@
+Metric,Avg,Min,Max,Unit
+Total Req,N/A,N/A,N/A,Req per kernel
+Read Req,N/A,N/A,N/A,Req per kernel
+Write Req,N/A,N/A,N/A,Req per kernel
+Atomic Req,N/A,N/A,N/A,Req per kernel
+Cache BW,N/A,N/A,N/A,Gbps
+Cache Hit Rate,N/A,N/A,N/A,Pct
+Cache Accesses,N/A,N/A,N/A,Req per kernel
+Cache Hits,N/A,N/A,N/A,Req per kernel
+Invalidations,N/A,N/A,N/A,Req per kernel
+L1-L2 BW,N/A,N/A,N/A,Gbps
+L1-L2 Read,N/A,N/A,N/A,Req per kernel
+L1-L2 Write,N/A,N/A,N/A,Req per kernel
+L1-L2 Atomic,N/A,N/A,N/A,Req per kernel

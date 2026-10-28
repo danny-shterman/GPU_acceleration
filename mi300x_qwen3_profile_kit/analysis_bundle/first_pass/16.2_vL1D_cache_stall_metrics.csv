@@ -1,0 +1,6 @@
+Metric,Min,Q1,Median,Q3,Max
+Stalled on L2 Data,N/A,N/A,N/A,N/A,N/A
+Stalled on L2 Req,N/A,N/A,N/A,N/A,N/A
+Tag RAM Stall (Read),N/A,N/A,N/A,N/A,N/A
+Tag RAM Stall (Write),N/A,N/A,N/A,N/A,N/A
+Tag RAM Stall (Atomic),N/A,N/A,N/A,N/A,N/A

@@ -1,55 +1,67 @@
 .:
-total 1008
--rw-rw-r-- 1 hotaisle hotaisle    322 Oct 13 08:52 04_07.txt
--rwxrwxr-x 1 hotaisle hotaisle   2095 Oct 13 08:52 01_start_container.sh
--rwxrwxr-x 1 hotaisle hotaisle   2668 Oct 13 08:52 00_collect_system.sh
-drwxrwxr-x 2 hotaisle hotaisle   4096 Oct 13 08:52 __pycache__
--rw-rw-r-- 1 hotaisle hotaisle   2259 Oct 13 08:52 README.md
--rwxrwxr-x 1 hotaisle hotaisle    900 Oct 13 08:52 09_trace_wrapper.sh
--rwxrwxr-x 1 hotaisle hotaisle   2121 Oct 13 08:52 08_static_dfg.py
--rwxrwxr-x 1 hotaisle hotaisle   2785 Oct 13 08:52 07_generate_prompts.py
--rwxrwxr-x 1 hotaisle hotaisle    324 Oct 13 08:52 06b_build_and_run_hbm_bandwidth.sh
--rwxrwxr-x 1 hotaisle hotaisle    600 Oct 13 08:52 06_build_and_run_hbm_latency.sh
-drwxrwxr-x 2 hotaisle hotaisle   4096 Oct 13 08:52 graphs
--rw-rw-r-- 1 hotaisle hotaisle   2606 Oct 13 08:52 hbm_bandwidth.hip
--rw-rw-r-- 1 hotaisle hotaisle  17692 Oct 13 08:52 mi300x_qwen3_end_to_end_dfg.dot
--rw-rw-r-- 1 hotaisle hotaisle   4329 Oct 13 08:52 hbm_latency.hip
--rw-rw-r-- 1 hotaisle hotaisle     34 Oct 13 08:52 requirements.txt
-drwxrwxr-x 2 hotaisle hotaisle   4096 Oct 13 08:52 prompts
--rwxrwxr-x 1 hotaisle hotaisle   1226 Oct 13 08:52 validate_kit.sh
--rwxrwxr-x 1 hotaisle hotaisle   2384 Oct 13 11:33 02_serve_qwen3_32b.sh
--rwxrwxr-x 1 hotaisle hotaisle  32264 Oct 14 11:59 hbm_latency
-drwxrwxr-x 3 hotaisle hotaisle   4096 Oct 15 13:29 env
--rwxrwxr-x 1 hotaisle hotaisle    603 Oct 15 13:29 05_monitor_amd_smi.sh
-drwxr-xr-x 4 hotaisle hotaisle   4096 Oct 18 10:17 docker_app_copy
--rw-rw-r-- 1 hotaisle hotaisle    461 Oct 18 11:27 11_rotate_log.py
--rwxrwxr-x 1 hotaisle hotaisle   1527 Oct 19 06:58 change_names.sh
--rw-rw-r-- 1 hotaisle hotaisle  47798 Oct 19 07:01 ls-ltr.log
--rwxrwxr-x 1 hotaisle hotaisle     69 Oct 19 09:32 check_gpu_vram.sh
--rwxrwxr-x 1 hotaisle hotaisle   5146 Oct 19 09:39 02_serve_qwen3_32b_sys_trace.sh
--rwxrwxr-x 1 hotaisle hotaisle     56 Oct 19 10:26 kill_docker_zombie_table_entries.sh
--rwxrwxr-x 1 hotaisle hotaisle    342 Oct 19 11:13 check_docker_running_processes.sh
--rwxrwxr-x 1 hotaisle hotaisle    442 Oct 20 09:10 are_rocpd_csv_pftrace_completed_successfully.sh
--rwxrwxr-x 1 hotaisle hotaisle   1477 Oct 20 09:10 release_vram_memory.sh
--rwxrwxr-x 1 hotaisle hotaisle   1851 Oct 20 09:10 kill_vllm_serve_full_cleanup.sh
--rwxrwxr-x 1 hotaisle hotaisle   4703 Oct 20 09:10 kill_vllm_serve_and_release_vram_memory.sh
--rwxrwxr-x 1 hotaisle hotaisle   1317 Oct 20 09:10 check_if_vllm_serve_runs.sh
--rwxrwxr-x 1 hotaisle hotaisle   2558 Oct 22 06:35 04_bench_prefill.sh
--rwxrwxr-x 1 hotaisle hotaisle   5821 Oct 22 06:35 03_bench_serving.sh
-drwxr-xr-x 2 root     root       4096 Oct 22 07:21 rocpd-20261022-072053.rpdb
-drwxr-xr-x 2 root     root       4096 Oct 22 07:22 rocpd-20261022-072119.rpdb
--rwxrwxr-x 1 hotaisle hotaisle    580 Oct 22 07:24 check_csv_pftrace_files.sh
--rwxrwxr-x 1 hotaisle hotaisle    835 Oct 22 07:31 check_if_container_is_running.sh
--rwxrwxr-x 1 hotaisle hotaisle   2424 Oct 22 07:32 kill_vllm_serve_only_by_signint.sh
-drwxr-xr-x 2 root     root       4096 Oct 22 13:30 rocpd-20261022-133041.rpdb
--rwxrwxr-x 1 hotaisle hotaisle   4312 Oct 22 13:52 check_vram_and_processes.sh
--rwxrwxr-x 1 hotaisle hotaisle   8192 Oct 22 14:04 release_vram_and_check_processes.sh
--rwxrwxr-x 1 hotaisle hotaisle  23816 Oct 24 08:22 hbm_bandwidth
-drwxrwxr-x 3 hotaisle hotaisle   4096 Oct 25 09:24 workloads
-drwxrwxr-x 3 hotaisle hotaisle   4096 Oct 25 09:26 results
--rwxrwxr-x 1 hotaisle hotaisle    792 Oct 25 09:30 10_compute_profile_wrapper.sh
--rw-rw-r-- 1 hotaisle hotaisle 697457 Oct 25 09:34 analyze.log
--rw-rw-r-- 1 hotaisle hotaisle      0 Oct 25 09:54 lt.txt
+total 45912
+-rw-rw-r-- 1 hotaisle hotaisle      322 Oct 13 08:52 04_07.txt
+-rwxrwxr-x 1 hotaisle hotaisle     2095 Oct 13 08:52 01_start_container.sh
+-rwxrwxr-x 1 hotaisle hotaisle     2668 Oct 13 08:52 00_collect_system.sh
+drwxrwxr-x 2 hotaisle hotaisle     4096 Oct 13 08:52 __pycache__
+-rw-rw-r-- 1 hotaisle hotaisle     2259 Oct 13 08:52 README.md
+-rwxrwxr-x 1 hotaisle hotaisle      900 Oct 13 08:52 09_trace_wrapper.sh
+-rwxrwxr-x 1 hotaisle hotaisle     2121 Oct 13 08:52 08_static_dfg.py
+-rwxrwxr-x 1 hotaisle hotaisle     2785 Oct 13 08:52 07_generate_prompts.py
+-rwxrwxr-x 1 hotaisle hotaisle      324 Oct 13 08:52 06b_build_and_run_hbm_bandwidth.sh
+-rwxrwxr-x 1 hotaisle hotaisle      600 Oct 13 08:52 06_build_and_run_hbm_latency.sh
+drwxrwxr-x 2 hotaisle hotaisle     4096 Oct 13 08:52 graphs
+-rw-rw-r-- 1 hotaisle hotaisle     2606 Oct 13 08:52 hbm_bandwidth.hip
+-rw-rw-r-- 1 hotaisle hotaisle    17692 Oct 13 08:52 mi300x_qwen3_end_to_end_dfg.dot
+-rw-rw-r-- 1 hotaisle hotaisle     4329 Oct 13 08:52 hbm_latency.hip
+-rw-rw-r-- 1 hotaisle hotaisle       34 Oct 13 08:52 requirements.txt
+drwxrwxr-x 2 hotaisle hotaisle     4096 Oct 13 08:52 prompts
+-rwxrwxr-x 1 hotaisle hotaisle     1226 Oct 13 08:52 validate_kit.sh
+-rwxrwxr-x 1 hotaisle hotaisle     2384 Oct 13 11:33 02_serve_qwen3_32b.sh
+-rwxrwxr-x 1 hotaisle hotaisle    32264 Oct 14 11:59 hbm_latency
+drwxrwxr-x 3 hotaisle hotaisle     4096 Oct 15 13:29 env
+-rwxrwxr-x 1 hotaisle hotaisle      603 Oct 15 13:29 05_monitor_amd_smi.sh
+drwxr-xr-x 4 hotaisle hotaisle     4096 Oct 18 10:17 docker_app_copy
+-rw-rw-r-- 1 hotaisle hotaisle      461 Oct 18 11:27 11_rotate_log.py
+-rwxrwxr-x 1 hotaisle hotaisle     1527 Oct 19 06:58 change_names.sh
+-rw-rw-r-- 1 hotaisle hotaisle    47798 Oct 19 07:01 ls-ltr.log
+-rwxrwxr-x 1 hotaisle hotaisle       69 Oct 19 09:32 check_gpu_vram.sh
+-rwxrwxr-x 1 hotaisle hotaisle     5146 Oct 19 09:39 02_serve_qwen3_32b_sys_trace.sh
+-rwxrwxr-x 1 hotaisle hotaisle       56 Oct 19 10:26 kill_docker_zombie_table_entries.sh
+-rwxrwxr-x 1 hotaisle hotaisle      342 Oct 19 11:13 check_docker_running_processes.sh
+-rwxrwxr-x 1 hotaisle hotaisle      442 Oct 20 09:10 are_rocpd_csv_pftrace_completed_successfully.sh
+-rwxrwxr-x 1 hotaisle hotaisle     1477 Oct 20 09:10 release_vram_memory.sh
+-rwxrwxr-x 1 hotaisle hotaisle     1851 Oct 20 09:10 kill_vllm_serve_full_cleanup.sh
+-rwxrwxr-x 1 hotaisle hotaisle     4703 Oct 20 09:10 kill_vllm_serve_and_release_vram_memory.sh
+-rwxrwxr-x 1 hotaisle hotaisle     1317 Oct 20 09:10 check_if_vllm_serve_runs.sh
+-rwxrwxr-x 1 hotaisle hotaisle     2558 Oct 22 06:35 04_bench_prefill.sh
+-rwxrwxr-x 1 hotaisle hotaisle     5821 Oct 22 06:35 03_bench_serving.sh
+drwxr-xr-x 2 root     root         4096 Oct 22 07:21 rocpd-20261022-072053.rpdb
+drwxr-xr-x 2 root     root         4096 Oct 22 07:22 rocpd-20261022-072119.rpdb
+-rwxrwxr-x 1 hotaisle hotaisle      580 Oct 22 07:24 check_csv_pftrace_files.sh
+-rwxrwxr-x 1 hotaisle hotaisle      835 Oct 22 07:31 check_if_container_is_running.sh
+-rwxrwxr-x 1 hotaisle hotaisle     2424 Oct 22 07:32 kill_vllm_serve_only_by_signint.sh
+drwxr-xr-x 2 root     root         4096 Oct 22 13:30 rocpd-20261022-133041.rpdb
+-rwxrwxr-x 1 hotaisle hotaisle     4312 Oct 22 13:52 check_vram_and_processes.sh
+-rwxrwxr-x 1 hotaisle hotaisle     8192 Oct 22 14:04 release_vram_and_check_processes.sh
+-rwxrwxr-x 1 hotaisle hotaisle    23816 Oct 24 08:22 hbm_bandwidth
+-rw-rw-r-- 1 hotaisle hotaisle   697457 Oct 25 09:34 analyze.log
+-rw-rw-r-- 1 hotaisle hotaisle     1232 Oct 25 10:06 qwen3_one_shot.py
+-rwxrwxr-x 1 hotaisle hotaisle      792 Oct 25 11:54 10_compute_profile_wrapper.sh
+drwxrwxr-x 9 hotaisle hotaisle     4096 Oct 25 13:19 workloads
+-rw-rw-r-- 1 hotaisle hotaisle  1235821 Oct 25 13:23 rocprof-compute-analyze.log
+-rw-rw-r-- 1 hotaisle hotaisle     5785 Oct 25 13:48 12_rank_cijk_shapes.py
+-rw-rw-r-- 1 hotaisle hotaisle  1237549 Oct 25 13:57 rocprof-compute-util.log
+-rw-rw-r-- 1 hotaisle hotaisle  1276429 Oct 25 13:59 rocprof-compute-mem.log
+-rw-rw-r-- 1 hotaisle hotaisle  1236137 Oct 25 14:01 rocprof-compute-flops.log
+-rwxrwxr-x 1 hotaisle hotaisle      318 Oct 26 07:44 truncate_vllm_rocprof_server-log.sh
+-rw-rw-r-- 1 hotaisle hotaisle        0 Oct 26 08:32 cijk_analysis_csv.log
+-rwxrwxr-x 1 hotaisle hotaisle      673 Oct 26 08:33 gen_machine_readable_analysis_output.sh
+drwxrwxr-x 4 hotaisle hotaisle     4096 Oct 26 08:34 results
+-rw-rw-r-- 1 hotaisle hotaisle  3750115 Oct 26 08:35 gen_machine_readable_analysis_output.log
+-rw-r--r-- 1 root     root     37208752 Oct 26 09:37 hipblaslt_27.log
+drwxrwxr-x 2 hotaisle hotaisle     4096 Oct 26 11:22 analysis_bundle
+-rw-rw-r-- 1 hotaisle hotaisle        0 Oct 26 11:24 lt.txt
 
 ./__pycache__:
 total 8
@@ -861,8 +873,14 @@ total 1516
 -rw-r--r-- 1 root root 774144 Oct 22 13:30 merged_db_0_3a518192-1dd7-4735-9928-e4eee9d27271.db
 
 ./workloads:
-total 4
+total 28
 drwxrwxr-x 3 hotaisle hotaisle 4096 Oct 25 09:24 hbm_test_rocpd
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 11:26 qwen3_32b_launchstats
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:22 qwen3_32b_compute_util
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:37 qwen3_32b_compute_util_test
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:47 qwen3_32b_cijk_compute_util
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 13:04 qwen3_32b_cijk_mem_thruput
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 13:19 qwen3_32b_cijk_compute_flops
 
 ./workloads/hbm_test_rocpd:
 total 4
@@ -906,33 +924,150 @@ total 524
 -rw-rw-r-- 1 hotaisle hotaisle    56 Oct 25 09:24 pmc_perf_5.txt
 -rw-rw-r-- 1 hotaisle hotaisle 29612 Oct 25 09:24 pmc_perf_4.yaml
 
+./workloads/qwen3_32b_launchstats:
+total 4
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:01 MI300X_A1
+
+./workloads/qwen3_32b_launchstats/MI300X_A1:
+total 179092
+drwxr-xr-x 2 hotaisle hotaisle      4096 Oct 25 11:26 perfmon
+-rw-r--r-- 1 hotaisle hotaisle       968 Oct 25 11:26 profiling_config.yaml
+-rw-r--r-- 1 hotaisle hotaisle       875 Oct 25 11:26 sysinfo.csv
+-rw-r--r-- 1 hotaisle hotaisle 146218871 Oct 25 11:33 pmc_perf.csv
+-rw-r--r-- 1 hotaisle hotaisle     42254 Oct 25 11:33 log.txt
+-rw-rw-r-- 1 hotaisle hotaisle  37042386 Oct 25 12:03 pmc_dispatch_info.csv
+-rw-rw-r-- 1 hotaisle hotaisle     67645 Oct 25 12:03 pmc_kernel_top.csv
+
+./workloads/qwen3_32b_launchstats/MI300X_A1/perfmon:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 64 Oct 25 11:26 pmc_perf_0.txt
+
+./workloads/qwen3_32b_compute_util:
+total 4
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:28 MI300X_A1
+
+./workloads/qwen3_32b_compute_util/MI300X_A1:
+total 60
+-rw-r--r-- 1 hotaisle hotaisle   961 Oct 25 12:22 profiling_config.yaml
+-rw-r--r-- 1 hotaisle hotaisle   876 Oct 25 12:22 sysinfo.csv
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct 25 12:22 perfmon
+-rw-r--r-- 1 hotaisle hotaisle   189 Oct 25 12:28 pmc_perf.csv
+-rw-r--r-- 1 hotaisle hotaisle 40991 Oct 25 12:28 log.txt
+
+./workloads/qwen3_32b_compute_util/MI300X_A1/perfmon:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 164 Oct 25 12:22 pmc_perf_0.txt
+
+./workloads/qwen3_32b_compute_util_test:
+total 4
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:43 MI300X_A1
+
+./workloads/qwen3_32b_compute_util_test/MI300X_A1:
+total 56
+-rw-r--r-- 1 hotaisle hotaisle   966 Oct 25 12:37 profiling_config.yaml
+-rw-r--r-- 1 hotaisle hotaisle   881 Oct 25 12:37 sysinfo.csv
+drwxr-xr-x 2 hotaisle hotaisle  4096 Oct 25 12:37 perfmon
+-rw-r--r-- 1 hotaisle hotaisle   189 Oct 25 12:43 pmc_perf.csv
+-rw-r--r-- 1 hotaisle hotaisle 40836 Oct 25 12:43 log.txt
+
+./workloads/qwen3_32b_compute_util_test/MI300X_A1/perfmon:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 157 Oct 25 12:37 pmc_perf_0.txt
+
+./workloads/qwen3_32b_cijk_compute_util:
+total 4
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 12:51 MI300X_A1
+
+./workloads/qwen3_32b_cijk_compute_util/MI300X_A1:
+total 170592
+-rw-r--r-- 1 hotaisle hotaisle       963 Oct 25 12:47 profiling_config.yaml
+-rw-r--r-- 1 hotaisle hotaisle       881 Oct 25 12:47 sysinfo.csv
+drwxr-xr-x 2 hotaisle hotaisle      4096 Oct 25 12:47 perfmon
+-rw-r--r-- 1 hotaisle hotaisle 155912736 Oct 25 12:50 pmc_perf.csv
+-rw-r--r-- 1 hotaisle hotaisle     40019 Oct 25 12:50 log.txt
+-rw-rw-r-- 1 hotaisle hotaisle  18680247 Oct 26 08:51 pmc_dispatch_info.csv
+-rw-rw-r-- 1 hotaisle hotaisle     33945 Oct 26 08:51 pmc_kernel_top.csv
+
+./workloads/qwen3_32b_cijk_compute_util/MI300X_A1/perfmon:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 156 Oct 25 12:47 pmc_perf_0.txt
+
+./workloads/qwen3_32b_cijk_mem_thruput:
+total 4
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 13:06 MI300X_A1
+
+./workloads/qwen3_32b_cijk_mem_thruput/MI300X_A1:
+total 170352
+-rw-r--r-- 1 hotaisle hotaisle       952 Oct 25 13:04 profiling_config.yaml
+-rw-r--r-- 1 hotaisle hotaisle       880 Oct 25 13:04 sysinfo.csv
+drwxr-xr-x 2 hotaisle hotaisle      4096 Oct 25 13:04 perfmon
+-rw-r--r-- 1 hotaisle hotaisle 155666373 Oct 25 13:05 pmc_perf.csv
+-rw-r--r-- 1 hotaisle hotaisle     40539 Oct 25 13:05 log.txt
+-rw-rw-r-- 1 hotaisle hotaisle  18680247 Oct 26 08:34 pmc_dispatch_info.csv
+-rw-rw-r-- 1 hotaisle hotaisle     33983 Oct 26 08:34 pmc_kernel_top.csv
+
+./workloads/qwen3_32b_cijk_mem_thruput/MI300X_A1/perfmon:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 143 Oct 25 13:04 pmc_perf_0.txt
+
+./workloads/qwen3_32b_cijk_compute_flops:
+total 4
+drwxr-xr-x 3 hotaisle hotaisle 4096 Oct 25 13:22 MI300X_A1
+
+./workloads/qwen3_32b_cijk_compute_flops/MI300X_A1:
+total 193488
+-rw-r--r-- 1 hotaisle hotaisle       978 Oct 25 13:19 profiling_config.yaml
+-rw-r--r-- 1 hotaisle hotaisle       882 Oct 25 13:19 sysinfo.csv
+drwxr-xr-x 2 hotaisle hotaisle      4096 Oct 25 13:19 perfmon
+-rw-r--r-- 1 hotaisle hotaisle 179356003 Oct 25 13:21 pmc_perf.csv
+-rw-r--r-- 1 hotaisle hotaisle     40138 Oct 25 13:21 log.txt
+-rw-rw-r-- 1 hotaisle hotaisle  18680247 Oct 26 08:35 pmc_dispatch_info.csv
+-rw-rw-r-- 1 hotaisle hotaisle     33922 Oct 26 08:35 pmc_kernel_top.csv
+
+./workloads/qwen3_32b_cijk_compute_flops/MI300X_A1/perfmon:
+total 4
+-rw-r--r-- 1 hotaisle hotaisle 224 Oct 25 13:19 pmc_perf_0.txt
+
 ./results:
-total 9523126080
--rw-r--r-- 1 root     root              2345 Oct 20 11:05 bench_serving_20261020_110442.json
--rw-r--r-- 1 root     root              4989 Oct 20 11:05 bench_serving_20261020_110442.log
--rw-rw-r-- 1 hotaisle hotaisle          2900 Oct 20 11:05 amd_smi_monitor_20261020_110432.csv
--rw-r--r-- 1 root     root              2364 Oct 22 07:18 bench_serving_20261022_071828.json
--rw-r--r-- 1 root     root              4948 Oct 22 07:18 bench_serving_20261022_071828.log
--rw-rw-r-- 1 hotaisle hotaisle          6186 Oct 22 07:20 amd_smi_monitor_20261022_071825.csv
-drwxr-xr-x 4 root     root              4096 Oct 22 13:16 qwen3_sys_trace
--rw-r--r-- 1 root     root              2258 Oct 22 13:21 prefill_short_20261022_132114.json
--rw-r--r-- 1 root     root              2207 Oct 22 13:21 prefill_medium_20261022_132127.json
--rw-r--r-- 1 root     root              2187 Oct 22 13:22 prefill_long_20261022_132142.json
--rw-r--r-- 1 root     root              7427 Oct 22 13:23 prefill_large_batch_20261022_132237.json
--rw-rw-r-- 1 hotaisle hotaisle         10804 Oct 22 13:24 amd_smi_monitor_20261022_132105.csv
--rw-r--r-- 1 root     root              2344 Oct 24 07:42 bench_serving_20261024_074152.json
--rw-r--r-- 1 root     root              4948 Oct 24 07:42 bench_serving_20261024_074152.log
--rw-rw-r-- 1 hotaisle hotaisle          3165 Oct 24 07:42 amd_smi_monitor_20261024_074147.csv
--rw-r--r-- 1 root     root              2266 Oct 24 07:47 prefill_short_20261024_074702.json
--rw-r--r-- 1 root     root              2223 Oct 24 07:47 prefill_medium_20261024_074714.json
--rw-r--r-- 1 root     root              2209 Oct 24 07:48 prefill_long_20261024_074730.json
--rw-r--r-- 1 root     root              7509 Oct 24 07:48 prefill_large_batch_20261024_074826.json
--rw-rw-r-- 1 hotaisle hotaisle         10274 Oct 24 07:50 amd_smi_monitor_20261024_074652.csv
--rw-r--r-- 1 root     root             43203 Oct 24 07:50 vllm_server.log
--rw-rw-r-- 1 hotaisle hotaisle           117 Oct 24 08:22 hbm_bandwidth.csv
--rw-rw-r-- 1 hotaisle hotaisle           564 Oct 25 09:19 hbm_test_analysis.txt
--rw-rw-r-- 1 hotaisle hotaisle        697457 Oct 25 09:34 hbm_test_rocpd_analysis.txt
--rw-r--r-- 1 root     root     9751679287352 Oct 25 09:54 vllm_rocprof_server.log
+total 47092
+-rw-r--r-- 1 root     root         2345 Oct 20 11:05 bench_serving_20261020_110442.json
+-rw-r--r-- 1 root     root         4989 Oct 20 11:05 bench_serving_20261020_110442.log
+-rw-rw-r-- 1 hotaisle hotaisle     2900 Oct 20 11:05 amd_smi_monitor_20261020_110432.csv
+-rw-r--r-- 1 root     root         2364 Oct 22 07:18 bench_serving_20261022_071828.json
+-rw-r--r-- 1 root     root         4948 Oct 22 07:18 bench_serving_20261022_071828.log
+-rw-rw-r-- 1 hotaisle hotaisle     6186 Oct 22 07:20 amd_smi_monitor_20261022_071825.csv
+drwxr-xr-x 4 root     root         4096 Oct 22 13:16 qwen3_sys_trace
+-rw-r--r-- 1 root     root         2258 Oct 22 13:21 prefill_short_20261022_132114.json
+-rw-r--r-- 1 root     root         2207 Oct 22 13:21 prefill_medium_20261022_132127.json
+-rw-r--r-- 1 root     root         2187 Oct 22 13:22 prefill_long_20261022_132142.json
+-rw-r--r-- 1 root     root         7427 Oct 22 13:23 prefill_large_batch_20261022_132237.json
+-rw-rw-r-- 1 hotaisle hotaisle    10804 Oct 22 13:24 amd_smi_monitor_20261022_132105.csv
+-rw-r--r-- 1 root     root         2344 Oct 24 07:42 bench_serving_20261024_074152.json
+-rw-r--r-- 1 root     root         4948 Oct 24 07:42 bench_serving_20261024_074152.log
+-rw-rw-r-- 1 hotaisle hotaisle     3165 Oct 24 07:42 amd_smi_monitor_20261024_074147.csv
+-rw-r--r-- 1 root     root         2266 Oct 24 07:47 prefill_short_20261024_074702.json
+-rw-r--r-- 1 root     root         2223 Oct 24 07:47 prefill_medium_20261024_074714.json
+-rw-r--r-- 1 root     root         2209 Oct 24 07:48 prefill_long_20261024_074730.json
+-rw-r--r-- 1 root     root         7509 Oct 24 07:48 prefill_large_batch_20261024_074826.json
+-rw-rw-r-- 1 hotaisle hotaisle    10274 Oct 24 07:50 amd_smi_monitor_20261024_074652.csv
+-rw-r--r-- 1 root     root        43203 Oct 24 07:50 vllm_server.log
+-rw-rw-r-- 1 hotaisle hotaisle      117 Oct 24 08:22 hbm_bandwidth.csv
+-rw-rw-r-- 1 hotaisle hotaisle      564 Oct 25 09:19 hbm_test_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle   697457 Oct 25 09:34 hbm_test_rocpd_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1237055 Oct 25 12:04 qwen3_32b_launchstats_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1354446 Oct 25 12:11 qwen3_32b_last_1000_dispatches.txt
+-rw-rw-r-- 1 hotaisle hotaisle      720 Oct 25 12:31 qwen3_32b_compute_util_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle      527 Oct 25 12:35 qwen3_32b_compute_util_empty_cells.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1237059 Oct 25 13:02 qwen3_32b_cijk_compute_util_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1275201 Oct 25 13:09 qwen3_32b_cijk_mem_thruput_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1235821 Oct 25 13:23 qwen3_32b_cijk_compute_flops_analysis.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1275665 Oct 25 14:08 cijk_k2_mem.txt
+-rw-rw-r-- 1 hotaisle hotaisle  1236285 Oct 25 14:09 cijk_k2_flops.txt
+-rw-r--r-- 1 hotaisle hotaisle 37208752 Oct 25 14:24 hipblaslt_10490.log
+-rw-rw-r-- 1 hotaisle hotaisle       34 Oct 25 14:39 qwen3_2048_current_hipblaslt_solutions.txt
+drwxrwxr-x 5 hotaisle hotaisle     4096 Oct 26 08:34 cijk_analysis_csv
+-rw-rw-r-- 1 hotaisle hotaisle  1237523 Oct 26 08:51 cijk_k2_util.txt
+-rw-rw-r-- 1 hotaisle hotaisle     1505 Oct 26 09:33 qwen3_32b_cijk_inference_rank.csv
 
 ./results/qwen3_sys_trace:
 total 8
@@ -986,3 +1121,62 @@ total 128
 -rw-r--r-- 1 root root  2730 Oct 22 13:30 qwen3_sys_trace_agent_info.csv
 -rw-r--r-- 1 root root 42689 Oct 22 13:30 qwen3_sys_trace_regions_trace.csv
 -rw-r--r-- 1 root root 78860 Oct 22 13:30 qwen3_sys_trace_results.pftrace
+
+./results/cijk_analysis_csv:
+total 12
+drwxrwxr-x 3 hotaisle hotaisle 4096 Oct 26 08:34 util
+drwxrwxr-x 3 hotaisle hotaisle 4096 Oct 26 08:34 mem
+drwxrwxr-x 3 hotaisle hotaisle 4096 Oct 26 08:35 flops
+
+./results/cijk_analysis_csv/util:
+total 4
+drwxrwxr-x 2 hotaisle hotaisle 4096 Oct 26 08:34 rocprof_compute_b692e71b
+
+./results/cijk_analysis_csv/util/rocprof_compute_b692e71b:
+total 12544
+-rw-rw-r-- 1 hotaisle hotaisle    10488 Oct 26 08:34 0.1_Top_Kernels.csv
+-rw-rw-r-- 1 hotaisle hotaisle 12816191 Oct 26 08:34 0.2_Dispatch_List.csv
+-rw-rw-r-- 1 hotaisle hotaisle      415 Oct 26 08:34 1.1_System_Info.csv
+-rw-rw-r-- 1 hotaisle hotaisle      340 Oct 26 08:34 11.1_Compute_Speed-of-Light.csv
+-rw-rw-r-- 1 hotaisle hotaisle      421 Oct 26 08:34 11.2_Pipeline_Statistics.csv
+-rw-rw-r-- 1 hotaisle hotaisle      316 Oct 26 08:34 11.3_Arithmetic_Operations.csv
+
+./results/cijk_analysis_csv/mem:
+total 4
+drwxrwxr-x 2 hotaisle hotaisle 4096 Oct 26 08:34 rocprof_compute_a0037328
+
+./results/cijk_analysis_csv/mem/rocprof_compute_a0037328:
+total 12576
+-rw-rw-r-- 1 hotaisle hotaisle    10486 Oct 26 08:34 0.1_Top_Kernels.csv
+-rw-rw-r-- 1 hotaisle hotaisle 12816191 Oct 26 08:34 0.2_Dispatch_List.csv
+-rw-rw-r-- 1 hotaisle hotaisle      414 Oct 26 08:34 1.1_System_Info.csv
+-rw-rw-r-- 1 hotaisle hotaisle     1308 Oct 26 08:34 2.1_System_Speed-of-Light.csv
+-rw-rw-r-- 1 hotaisle hotaisle      136 Oct 26 08:34 16.1_vL1D_Speed-of-Light.csv
+-rw-rw-r-- 1 hotaisle hotaisle      231 Oct 26 08:34 16.2_vL1D_cache_stall_metrics.csv
+-rw-rw-r-- 1 hotaisle hotaisle      493 Oct 26 08:34 16.3_vL1D_cache_access_metrics.csv
+-rw-rw-r-- 1 hotaisle hotaisle      603 Oct 26 08:34 16.4_L1D_-_L2_Transactions.csv
+-rw-rw-r-- 1 hotaisle hotaisle      204 Oct 26 08:34 16.5_L1_Unified_Translation_Cache_(UTCL1).csv
+-rw-rw-r-- 1 hotaisle hotaisle      170 Oct 26 08:34 17.1_L2_Speed-of-Light.csv
+-rw-rw-r-- 1 hotaisle hotaisle      477 Oct 26 08:34 17.2_L2-Fabric_interface_metrics.csv
+-rw-rw-r-- 1 hotaisle hotaisle      759 Oct 26 08:34 17.3_L2_Cache_Accesses.csv
+-rw-rw-r-- 1 hotaisle hotaisle      107 Oct 26 08:34 17.5_L2_-_Fabric_Interface_stalls.csv
+-rw-rw-r-- 1 hotaisle hotaisle      545 Oct 26 08:34 17.6_L2_-_Fabric_interface_detailed_metrics.csv
+
+./results/cijk_analysis_csv/flops:
+total 4
+drwxrwxr-x 2 hotaisle hotaisle 4096 Oct 26 08:35 rocprof_compute_2c7841bd
+
+./results/cijk_analysis_csv/flops/rocprof_compute_2c7841bd:
+total 12536
+-rw-rw-r-- 1 hotaisle hotaisle    10487 Oct 26 08:35 0.1_Top_Kernels.csv
+-rw-rw-r-- 1 hotaisle hotaisle 12816191 Oct 26 08:35 0.2_Dispatch_List.csv
+-rw-rw-r-- 1 hotaisle hotaisle      416 Oct 26 08:35 1.1_System_Info.csv
+-rw-rw-r-- 1 hotaisle hotaisle     1307 Oct 26 08:35 2.1_System_Speed-of-Light.csv
+
+./analysis_bundle:
+total 308656
+-rw-rw-r-- 1 hotaisle hotaisle      2517 Oct 26 11:17 vllm_environment.txt
+-rw-rw-r-- 1 hotaisle hotaisle      5608 Oct 26 11:18 qwen3_scripts.tar.gz
+-rwxrwxr-x 1 hotaisle hotaisle       380 Oct 26 11:20 extract_vllm.sh
+-rw-rw-r-- 1 hotaisle hotaisle 316040008 Oct 26 11:21 vllm_active_source.tar.gz
+-rw-rw-r-- 1 hotaisle hotaisle       855 Oct 26 11:22 gpu_backend_versions.txt
