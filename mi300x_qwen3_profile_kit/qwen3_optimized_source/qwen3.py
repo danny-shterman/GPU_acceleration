@@ -59,6 +59,8 @@ from .qwen2 import Qwen2MLP as Qwen3MLP
 from .qwen2 import Qwen2Model
 from .utils import AutoWeightsLoader, PPMissingLayer, extract_layer_index, maybe_prefix
 
+from .qwen3_fused_qk_norm import fused_qk_rmsnorm
+
 logger = init_logger(__name__)
 
 
@@ -159,14 +161,33 @@ class Qwen3Attention(nn.Module):
         hidden_states: torch.Tensor,
     ) -> torch.Tensor:
         qkv, _ = self.qkv_proj(hidden_states)
-        q, k, v = qkv.split([self.q_size, self.kv_size, self.kv_size], dim=-1)
-        # Add qk-norm
-        q_by_head = q.view(*q.shape[:-1], q.shape[-1] // self.head_dim, self.head_dim)
-        q_by_head = self.q_norm(q_by_head)
-        q = q_by_head.view(q.shape)
-        k_by_head = k.view(*k.shape[:-1], k.shape[-1] // self.head_dim, self.head_dim)
-        k_by_head = self.k_norm(k_by_head)
-        k = k_by_head.view(k.shape)
+
+#        q, k, v = qkv.split([self.q_size, self.kv_size, self.kv_size], dim=-1)
+#        # Add qk-norm
+#        q_by_head = q.view(*q.shape[:-1], q.shape[-1] // self.head_dim, self.head_dim)
+#        q_by_head = self.q_norm(q_by_head)
+#        q = q_by_head.view(q.shape)
+#        k_by_head = k.view(*k.shape[:-1], k.shape[-1] // self.head_dim, self.head_dim)
+#        k_by_head = self.k_norm(k_by_head)
+#        k = k_by_head.view(k.shape)
+
+        # New code start.
+        _, _, v = qkv.split(
+            [self.q_size, self.kv_size, self.kv_size],
+            dim=-1,
+        )
+
+        q, k = fused_qk_rmsnorm(
+            qkv=qkv,
+            q_heads=self.num_heads,
+            k_heads=self.num_kv_heads,
+            head_dim=self.head_dim,
+            q_weight=self.q_norm.weight,
+            k_weight=self.k_norm.weight,
+            eps=self.q_norm.variance_epsilon,
+        )
+        # New code end.
+
         q, k = self.rotary_emb(positions, q, k)
         attn_output = self.attn(q, k, v)
         output, _ = self.o_proj(attn_output)
